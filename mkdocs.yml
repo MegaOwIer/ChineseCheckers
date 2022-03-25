@@ -1,11 +1,18 @@
 site_name: Chinese Checkers
+site_url: https://cpp.ruc.megaowier.cc
 
 # Repository
+repo_name: 'MegaOwIer/ChineseCheckers'
 repo_url: https://github.com/MegaOwIer/ChineseCheckers
 
 # Contents
 nav:
   - Home: index.md
+  - Tasks:
+    - Task 0: instructions/Task0.md
+  - Teams:
+    - Team 0: submission/Team0/index.md
+
 
 # Theme
 theme:

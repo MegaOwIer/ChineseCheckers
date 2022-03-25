@@ -6,11 +6,15 @@
 
 ### 仓库结构说明
 
-本项目使用 `mkdocs`
+本项目使用 `mkdocs` 部署，你可以访问 `https://cpp.ruc.megaowier.cc/` 查看页面。
+
+**大部分文件均与网站前端展示相关，除非任务有要求，否则请不要修改 `docs/` 目录之外的任何文件。**
+
+`docs/` 目录的结构如下：
 
 + `instructions/`：所有的任务文档将以 Markdown 格式发布于该文件夹内。
 + `submission/`：你的所有提交将在该文件夹内完成。
-  + 注意，除非任务中有特殊要求，否则你不应该修改位于该文件夹之外的任何文件。
++ `index.md`：网站前端首页的展示内容。
 
 ### 使用教程
 
@@ -29,6 +33,8 @@ Connection to github.com closed.
 ```
 
 然后，点击 Fork 将本仓库在你的账号下建立一个分支。完成后打开 `https://github.com/<user-name>/ChineseCheckers` 即可查看自己账户下的仓库。
+
+<center><img src="pic/fork.png" width="990"></center>
 
 完成上述步骤后，你需要将该项目拉取到本地（需要提前安装 `git`）。这会在你命令行的当前目录新建一个名为 `ChineseCheckers` 的文件夹，请在 `clone` 前确保命令行打开的路径和你的预期相符。
 
@@ -66,6 +72,10 @@ To github.com:Menci/TuringAdvancedProgramming19A.git
 
 最后，到 GitHub 上点击创建 Pull Request：
 
+<center><img src="pic/pr.png" width="990"></center>
+
 在接下来的页面中点击「compare across forks」，并在左边选择主仓库（`MegaOwIer/ChineseCheckers`），右边选择你的仓库。
 
 输入标题和正文（可为空）后点击最下方的「Create pull request」即可。你的提交将在被审阅之后合并到主仓库。
+
+在此后的作业中，你并不需要每次都删除你的仓库并重新 Fork 一遍。你可以在每次任务更新后新建一个从主仓库到你的仓库的 Pull Request 并合并即可。
