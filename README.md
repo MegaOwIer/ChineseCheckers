@@ -66,8 +66,8 @@ Delta compression using up to 4 threads
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 2.57 KiB | 97.00 KiB/s, done.
 Total 4 (delta 0), reused 0 (delta 0)
-To github.com:Menci/TuringAdvancedProgramming19A.git
- + bdd68d8...1efda49 master -> master
+To github.com:MegaOwIer/ChineseCheckers.git
+ + 77b2b14...0f5a36c master -> master
 ```
 
 最后，到 GitHub 上点击创建 Pull Request：
