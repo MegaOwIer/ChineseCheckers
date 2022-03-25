@@ -47,7 +47,7 @@ git clone git@github.com:<user-name>/ChineseCheckers.git
 ```bash
 # cd "ChineseCheckers/foobar/114514"
 git add 2021114514张三
-git commit
+git commit -m 'say something you like'
 ```
 
 在打开的编辑器中输入提交信息（不可为空）后保存并退出编辑器，即可完成本地提交。使用以下命令将提交推送到远程：
