@@ -29,7 +29,8 @@ nav:
   - Home: index.md
   # ...
   - Teams:
-    - Team 0: <path>
+    - Team 0:
+      - 小组简介: <path>
 
 # ...
 

@@ -8,11 +8,17 @@ repo_url: https://github.com/MegaOwIer/ChineseCheckers
 # Contents
 nav:
   - Home: index.md
+  - Instructions:
+    - 游戏玩法: instructions/inst-introduction.md
+    - 游戏规则: instructions/inst-rule.md
   - Tasks:
     - Task 0: instructions/Task0.md
   - Teams:
-    - Team 0: submission/Team0/index.md
-    - Team 9: submission/Team9/HelloWorld.md
+    - Team 0:
+      - 小组简介: submission/Team0/index.md
+      - 第一阶段总结: submission/Team0/stage1/report.md
+    - Team 9:
+      - 小组简介: submission/Team9/HelloWorld.md
 
 
 # Theme

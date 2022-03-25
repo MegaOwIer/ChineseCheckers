@@ -11,7 +11,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://cpp.ruc.megaowier.cc/instructions/Task1/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cpp.ruc.megaowier.cc/instructions/inst-introduction/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cpp.ruc.megaowier.cc/instructions/inst-rule/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://cpp.ruc.megaowier.cc/submission/Team0/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cpp.ruc.megaowier.cc/submission/Team0/stage1/report/</loc>
          <lastmod>2022-03-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
