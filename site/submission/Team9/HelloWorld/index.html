@@ -1,0 +1,557 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/submission/Team9/HelloWorld/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
+    
+    
+      
+        <title>Team 9 - Chinese Checkers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Chinese Checkers" class="md-header__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chinese Checkers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Team 9
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Chinese Checkers" class="md-nav__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Chinese Checkers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/Task0/" class="md-nav__link">
+        Task 0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Teams
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team0/" class="md-nav__link">
+        Team 0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Team 9
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/submission/Team9/HelloWorld.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="_1">实验报告<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>[toc]</p>
+<h1 id="1">1.功能分析<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<h2 id="11-stopinvolution">1.1 StopInvolution程设跳棋游戏的基本功能<a class="headerlink" href="#11-stopinvolution" title="Permanent link">&para;</a></h2>
+<ul>
+<li>友好的图形界面</li>
+<li>支持 1,2,3,4,6 人游戏</li>
+<li>支持 AI 托管</li>
+<li>支持不同玩家在局域网联机</li>
+</ul>
+<h2 id="12">1.2 跳棋规则<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<ol>
+<li>相邻移动</li>
+<li>相邻跳跃</li>
+<li>允许连跳，但是移动和跳跃不满足相继的条件</li>
+<li>不允许不相邻跳跃，或者说一般的等距跳跃是不被允许的</li>
+<li>不允许轮空</li>
+<li>不做消极游戏判断</li>
+<li>按照完赛先后排名</li>
+</ol>
+<h1 id="2">2.游戏流程设计<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h2 id="21">2.1 等待房准备<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<ol>
+<li>玩家首先进入等待房间，此时玩家可以修改自己的昵称</li>
+<li>随后玩家选择游戏桌坐入，坐入后自动进入棋盘(下棋界面)</li>
+</ol>
+<h2 id="22">2.2 加入房间，准备开始<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
+<ol>
+<li>开始游戏前每个玩家可以自由选择座位方位</li>
+<li>开始游戏前每个玩家可以指定位置加入机器人</li>
+<li>开始游戏前每个玩家可以选择游戏人数(1,2,3,4,6,自动),默认为自动，自动会优先选择向上最近的一个合法游戏人数。棋盘人数和游戏设定人数的差用托管机器人填补</li>
+</ol>
+<h2 id="23">2.3 开始游戏<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
+<ol>
+<li>每个玩家都可以点击”开始游戏“开始游戏</li>
+<li>开始游戏后如果玩家的座位方位不符合规则会按“相对位置不变”调整，自动添加的机器人会出现在最后</li>
+<li>开始游戏后房间会拒绝其他玩家的加入</li>
+</ol>
+<h2 id="24">2.4 游戏中<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
+<ol>
+<li>玩家选择棋子后可以获得合法落子位置提示 </li>
+<li>玩家可以随时启用托管或获得托管的建议行棋方式</li>
+<li>托管的智能程度可通过设置定义</li>
+</ol>
+<blockquote>
+<p>2.1 - 2.3 还在实现中</p>
+</blockquote>
+<h1 id="3">3. 分工<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
+<ul>
+<li>潘俊达:跳棋基本界面实现+跳棋底层逻辑实现</li>
+<li>贾昊霖:网络接口接入+多人交互界面功能实现</li>
+<li>程云飞:托管AI实现</li>
+</ul>
+<h1 id="4">4. 实现细节<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<h2 id="41">4.1 跳棋底层逻辑<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
+<h3 id="411">4.1.1 跳棋坐标<a class="headerlink" href="#411" title="Permanent link">&para;</a></h3>
+<p>以
+$$
+\hat{i}=(1,0)\
+ \
+\hat{j}=(\frac{1}{2},\frac{\sqrt{3}}{2})
+$$
+为基底建系，则棋子可以有唯一的整坐标，通过 <span class="arithmatex"><span class="MathJax_Preview">[i,j]</span><script type="math/tex">[i,j]</script></span> 矩阵可以方便地实现像素坐标和棋盘坐标的互转</p>
+<p><img alt="" src="../image/README/1648206802179.png" /><img alt="" src="../image/README/1648206874945.png" /></p>
+<h3 id="412">4.1.2 合法落子位置搜索<a class="headerlink" href="#412" title="Permanent link">&para;</a></h3>
+<h4 id="4121">4.1.2.1 间隔跳版本<a class="headerlink" href="#4121" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>通过 BFS 搜索，先将选择的棋子加入队列</p>
+</li>
+<li>
+<p>以队首棋子 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 为出发点，枚举棋盘上的其他棋子，获得等距跳的落子位置，然后判断以下条件</p>
+</li>
+<li>
+<p>落子位置是否在界内</p>
+</li>
+<li>落子位置是否有别的棋子占用</li>
+<li>枚举棋盘上所有棋子判断:出发点和落子位置之间是否有除了中转棋子之外的其他棋子</li>
+<li>落子位置是不是已经被搜索过</li>
+<li>如果判断合法则加入队列</li>
+<li>其他棋子枚举完后 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 出队</li>
+<li>不断重复 <span class="arithmatex"><span class="MathJax_Preview">2-4</span><script type="math/tex">2-4</script></span> 直至队空</li>
+</ol>
+<h4 id="4122">4.1.2.2 相邻跳版本<a class="headerlink" href="#4122" title="Permanent link">&para;</a></h4>
+<p>将 4.1.2.1-2 的枚举范围限定到相邻棋子即可，这样的效率可能不是非常高，但这里没有效率需求</p>
+<p>算法部分的同学会在算法部分给出更高效率的实现</p>
+<h2 id="42">4.2 跳棋棋盘交互界面(即不涉及多人的部分)<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
+<h3 id="422">4.2.2 模块层次<a class="headerlink" href="#422" title="Permanent link">&para;</a></h3>
+<p>Marble : 棋子/提示</p>
+<p>Player ：玩家</p>
+<p>ChessBoard：棋盘</p>
+<p>成员的包含关系： ChessBoard-&gt;Player-&gt;Marble</p>
+<h3 id="422-marble">4.2.2 Marble<a class="headerlink" href="#422-marble" title="Permanent link">&para;</a></h3>
+<p>Marble 继承了QLabel，以实现
+- 点击事件：当且仅当棋子的父对象即玩家当轮处于激活态时 clickable=True。回调 ChessBoard 层面的函数，以选择棋子（当棋子被点击时）或选择落点（当提示位置被点击时）
+- 图标显示(棋子/提示虚线框)：使用 QPixmap 实现
+- 位置移动：略
+- 移动动画：使用 Qt 封装的动画库 QSequentialAnimationGroup 和 QPropertyAnimation 实现。事实上为了更好的显示效果，我们在合法落子位置搜索那里保存了跳跃路径，所以此处的移动动画将会重现棋子的跳跃过程</p>
+<h3 id="423-player">4.2.3 Player<a class="headerlink" href="#423-player" title="Permanent link">&para;</a></h3>
+<p>值得一提的是为了实现上的方便，我们抽象出了一个提示玩家，它负责管理提示棋子(显示为虚线框)</p>
+<h3 id="424-chessboard">4.2.4 ChessBoard<a class="headerlink" href="#424-chessboard" title="Permanent link">&para;</a></h3>
+<p>负责处理
+- 玩家轮次抵换
+- 汇合一般玩家棋子的点击和提示玩家棋子的点击信息，以指导玩家棋子的移动
+- 选择棋子后显示合法落子位置</p>
+<h2 id="43">4.3 游戏程序流程简述<a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
+<h3 id="431">4.3.1 初始化阶段<a class="headerlink" href="#431" title="Permanent link">&para;</a></h3>
+<p>棋盘创建按钮，标签和玩家对象(包括抽象出来的hintPlayer)，玩家创建棋子对象(hintPlayer初始时不拥有棋子)。</p>
+<p>此时 ChessBoard 保存的 activatedPlayer 指向 玩家0，selectedChess 指向 nullptr</p>
+<h3 id="432">4.3.2 游戏阶段<a class="headerlink" href="#432" title="Permanent link">&para;</a></h3>
+<p>玩家可以点击棋盘上的棋子，此时只有 activatedPlayer 对它自己的棋子的点击会触发回调，点击后会传递所点击棋子的地址给 ChessBoard，此时 ChessBoard 的 selectedChess 就指向所点棋子。</p>
+<p>紧接着 ChessBoard 会调用 getHint 来对这个棋子计算合法落子，并动态地将合法落子抽象成一个棋子加入到hintPlayer。getHint 结束后调用 showHint 显示提示棋子。</p>
+<p>此时若玩家继续点击正常棋子，hintPlayer 的棋子会被删除。若重新点击的是刚才的 selectedChess 则 selectedChess 会重新指向 nullptr , 若改变主意点其他棋子，则会重新计算并显示 hint。</p>
+<p>若玩家想行棋，则它应该点击 hintPlayer 拥有的棋子 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>，点击后会触发回调，ChessBoard 层面会把这个棋子 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> 作为参数传给 selectedChess 这个棋子的成员函数 moveToWithPath。值得注意的是 getHint 时创建的每个 hint 棋子保存了它从 selectedChess 到最终点时经过的路径，所以传递 hint 棋子就可以让玩家棋子实现路径移动。</p>
+<p>移动结束后会判断该玩家是否已经完赛</p>
+<p>判断结束后调用 nextTurn() 和 updateLabelInfo()。进入下一个玩家的轮次</p>
+<h1 id="5">5.实现难点分析<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<h2 id="51-or-connect-or-addto">5.1 回调 or connect or addTo()<a class="headerlink" href="#51-or-connect-or-addto" title="Permanent link">&para;</a></h2>
+<p>在棋子点击回调 ChessBoard 层面的函数时发现如果 <code>ChessBoard</code> 的构造出现了 <code>Player</code> 而 <code>Player</code> 的构造出现了 <code>Marble</code>，最后 <code>Marble</code> 又需要 <code>ChessBoard</code> 的地址会导致死循环</p>
+<p>我们的解决方法是在所有 <code>.h</code> 文件中不 <code>#include</code> 父类的头文件，而是简单声明。然后使用 <code>addTo</code> 函数在对象初始化完成后再把地址信息传递下去</p>
+<p>事实上应该也可以使用函数指针，或者 Qt 的 connect 函数来实现，不过我们这种实现会可以降低未来的代码量，防止每次都要新建一个回调传下去</p>
+<p>比如如果我需要判断棋子的父玩家是不是处于激活状态，就不需要为这种小东西实现一大段函数，而只要 <code>this-&gt;parentPlayer-&gt;...</code></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../../Team0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Team 0" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Team 0
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
