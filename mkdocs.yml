@@ -13,6 +13,7 @@ nav:
     - 游戏规则: instructions/inst-rule.md
   - Tasks:
     - Task 0: instructions/Task0.md
+    - Task 1: instructions/Task1.md
   - Teams:
     - Team 0:
       - 小组简介: submission/Team0/index.md
