@@ -96,7 +96,7 @@ $$
 
 ## 4.3 游戏程序流程简述
 ### 4.3.1 初始化阶段
-棋盘创建按钮，标签和玩家对象(包括抽象出来的`hintPlayer`)，玩家创建棋子对象(`hintPlayer`初始时不拥有棋子)。
+棋盘创建按钮，标签和玩家对象 (包括抽象出来的 `hintPlayer` )，玩家创建棋子对象 ( `hintPlayer` 初始时不拥有棋子)。
 
 此时 `ChessBoard` 保存的 `activatedPlayer` 指向 `player[0]`，`selectedChess` 指向 `nullptr`
 
@@ -111,7 +111,7 @@ $$
 
 移动结束后会判断该玩家是否已经完赛
 
-判断结束后调用 `nextTurn()` 和 `updateLabelInfo()`。进入下一个玩家的轮次
+判断结束后调用 `nextTurn()` 和 `updateLabelInfo()` 进入下一个玩家的轮次
 
 # 5.实现难点分析
 ## 5.1 回调 or connect or addTo()
