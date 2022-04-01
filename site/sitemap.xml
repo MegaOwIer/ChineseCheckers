@@ -21,17 +21,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://cpp.ruc.megaowier.cc/instructions/inst-agreement/</loc>
-         <lastmod>2022-04-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://cpp.ruc.megaowier.cc/instructions/inst-introduction/</loc>
          <lastmod>2022-04-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cpp.ruc.megaowier.cc/instructions/inst-network/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cpp.ruc.megaowier.cc/instructions/inst-protocol/</loc>
          <lastmod>2022-04-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
