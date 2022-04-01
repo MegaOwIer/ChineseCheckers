@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/instructions/inst-introduction/">
+        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/instructions/inst-agreement/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
     
     
       
-        <title>游戏玩法 - Chinese Checkers</title>
+        <title>Inst agreement - Chinese Checkers</title>
       
     
     
@@ -64,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              游戏玩法
+              Inst agreement
             
           </span>
         </div>
@@ -216,14 +221,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -244,19 +247,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../inst-introduction/" class="md-nav__link">
         游戏玩法
       </a>
-      
     </li>
   
 
@@ -972,23 +967,184 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    常规请求
+  </a>
+  
+    <nav class="md-nav" aria-label="常规请求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end_game_op" class="md-nav__link">
+    END_GAME_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end_turn_op" class="md-nav__link">
+    END_TURN_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join_room_op" class="md-nav__link">
+    JOIN_ROOM_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join_room_reply_op" class="md-nav__link">
+    JOIN_ROOM_REPLY_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leave_room_op" class="md-nav__link">
+    LEAVE_ROOM_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move_op" class="md-nav__link">
+    MOVE_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player_ready_op" class="md-nav__link">
+    PLAYER_READY_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start_game_op" class="md-nav__link">
+    START_GAME_OP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start_turn_op" class="md-nav__link">
+    START_TURN_OP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/instructions/inst-introduction.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/instructions/inst-agreement.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>游戏玩法</h1>
+  <h1>Inst agreement</h1>
 
-<p>十子跳棋是一种可以由二至六人同时进行的棋盘游戏，棋盘为六角星，棋子分为六种颜色，每位玩家拥有 <span class="arithmatex"><span class="MathJax_Preview">10</span><script type="math/tex">10</script></span> 枚棋子并摆满一个角，按照规则轮流走棋，以最早全部抵达并摆满对角为优胜。</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span> 人对局时，初始将棋子放在相对的角上；<span class="arithmatex"><span class="MathJax_Preview">3</span><script type="math/tex">3</script></span> 人对局时，将棋子互相间隔一个角摆放以平均分布；<span class="arithmatex"><span class="MathJax_Preview">6</span><script type="math/tex">6</script></span> 人对局时，每个玩家各占一个角。在本次大作业中，不考虑 <span class="arithmatex"><span class="MathJax_Preview">4</span><script type="math/tex">4</script></span> 人对局和 <span class="arithmatex"><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span> 人对局。</p>
-<p><center><img src="/instructions/fig/board.png" width="200"></center></p>
-<p>上图为十子跳棋的棋盘。玩家的 <span class="arithmatex"><span class="MathJax_Preview">10</span><script type="math/tex">10</script></span> 枚棋子的初始位置为所分配的角上的外四行，靠近棋盘中央的第五行不放任何棋子。</p>
+<p>一个完整的请求包含一个操作符 <code>OP</code> 以及至多两个数据段 <code>data1</code> 和 <code>data2</code>。操作符指定了当前请求需要执行的操作，数据段则在此基础上给出了一些额外信息。</p>
+<p>下面给出本次作业中可能用到的所有请求及其处理行为。未提及到的数据段默认置空。如未说明 server/client 在收到某一请求后的行为，则表示不需要进行任何回复。</p>
+<h3 id="_1">常规请求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="end_game_op"><code>END_GAME_OP</code><a class="headerlink" href="#end_game_op" title="Permanent link">&para;</a></h4>
+<p>当所有玩家均完成游戏时，server 应向所有玩家发送 <code>END_GAME_OP</code> 请求，并将数据段 <code>data1</code> 设置为玩家排名列表，表示本轮游戏结束。</p>
+<p>在 client 收到这一请求后，应向玩家展示排名列表，并退出房间。</p>
+<h4 id="end_turn_op"><code>END_TURN_OP</code><a class="headerlink" href="#end_turn_op" title="Permanent link">&para;</a></h4>
+<p>在某一次移动后，若有玩家获得胜利，server 应在处理完 <code>MOVE_UP</code> 请求后向对应 client 发送 <code>END_TURN_OP</code> 请求，使之确定获得胜利。</p>
+<h4 id="join_room_op"><code>JOIN_ROOM_OP</code><a class="headerlink" href="#join_room_op" title="Permanent link">&para;</a></h4>
+<p>当 client 尝试加入一个房间时，应向 server 发送 <code>JOIN_ROOM_OP</code> 请求，并将数据段 <code>data1</code> 和 <code>data2</code> 分别设置为房间号和用户名。</p>
+<ul>
+<li>用户名为长度不超过 <span class="arithmatex"><span class="MathJax_Preview">20</span><script type="math/tex">20</script></span> 且仅包括大小写字母、数字和下划线 <code>_</code> 的字符串。</li>
+</ul>
+<p>Server 在收到请求后，首先应检查目标房间是否存在，若不存在则创建一个新的房间。随后检查目标房间状态（如是否在游戏中、是否已有同名的用户），检查失败则返回一个<a href="">错误</a>，否则返回一个 <code>JOIN_ROOM_REPLY_OP</code> 请求。</p>
+<p>当玩家成功进入房间后，server 应向在当前房间内的<strong>所有玩家</strong>发送 <code>JOIN_ROOM_OP</code> 请求，并将数据段 <code>data1</code> 置为新加入玩家的用户名，表示有一名新的玩家进入了房间。</p>
+<h4 id="join_room_reply_op"><code>JOIN_ROOM_REPLY_OP</code><a class="headerlink" href="#join_room_reply_op" title="Permanent link">&para;</a></h4>
+<p>当玩家成功进入房间后，server 应向该玩家发送 <code>JOIN_ROOM_REPLY_OP</code> 请求，表示其成功加入了房间。</p>
+<p>新加入房间的玩家应处于未就绪（Unready）状态。</p>
+<h4 id="leave_room_op"><code>LEAVE_ROOM_OP</code><a class="headerlink" href="#leave_room_op" title="Permanent link">&para;</a></h4>
+<p>在 client 离开房间之前，应向 server 发送 <code>LEAVE_ROOM_OP</code> 请求，并将数据段 <code>data1</code> 和 <code>data2</code> 分别设置为房间号和当前用户名。</p>
+<p>当有玩家离开房间时，server 应向在当前房间内的所有玩家发送 <code>LEAVE_ROOM_OP</code> 请求，并将数据段 <code>data1</code> 置为该玩家的用户名，表示有一名玩家离开了房间。</p>
+<h4 id="move_op"><code>MOVE_OP</code><a class="headerlink" href="#move_op" title="Permanent link">&para;</a></h4>
+<p>当玩家决定如何行棋后，client 应向 server 发送一个 <code>MOVE_OP</code> 请求，并将数据段 <code>data1</code> 设置为当前玩家的初始区域编号，数据段 <code>data2</code> 设置为棋子跳动所经过的坐标列表。</p>
+<ul>
+<li>坐标列表格式待定。</li>
+</ul>
+<p>Server 在收到这一请求后，需要判断玩家的动作是否合法，不合法则返回一个错误，否则记录下玩家的这一步并向<strong>其他</strong>玩家转发同样的 <code>MOVE_OP</code> 请求。注意移动者自身不应收到这一请求。</p>
+<h4 id="player_ready_op"><code>PLAYER_READY_OP</code><a class="headerlink" href="#player_ready_op" title="Permanent link">&para;</a></h4>
+<p>当玩家准备就绪时，client 应向 server 发送 <code>PLAYER_READY_OP</code> 请求，并将数据段 <code>data1</code> 设置为用户名。</p>
+<p>Server 在收到请求后，应向当前房间内的<strong>所有玩家</strong>转发这一请求。</p>
+<p>Client 在收到请求后，应将相应玩家的状态更新为就绪（Ready）。</p>
+<h4 id="start_game_op"><code>START_GAME_OP</code><a class="headerlink" href="#start_game_op" title="Permanent link">&para;</a></h4>
+<p>当房间内玩家数量不低于 <span class="arithmatex"><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span> 且所有玩家都处于就绪（Ready）状态时，server 应向所有玩家发送 <code>START_GAME_OP</code> 请求，表示游戏开始，并将数据段 <code>data1</code> 和 <code>data2</code> 分别设置为玩家列表和每个玩家被分到的初始区域。</p>
+<ul>
+<li>玩家列表（数据段 <code>data1</code>）是一个字符串，包含所有玩家的用户名。不同玩家的用户名以单个空格分隔。</li>
+<li>棋盘上的区域从正上方开始顺时针依次标记为 <span class="arithmatex"><span class="MathJax_Preview">A, B, C, D, E,  F</span><script type="math/tex">A, B, C, D, E,  F</script></span>。<code>data2</code> 格式与 <code>data1</code> 相似，且玩家与其初始区域位置相对应。<ul>
+<li>例如，若 <code>data1</code> 段为 <code>"player1 player02"</code> 且 <code>data2</code> 段为 <code>"D A"</code>，玩家 <code>player1</code> 被分配至 D 区，玩家 <code>player02</code> 被分配至 A 区。</li>
+</ul>
+</li>
+<li>游戏开始后，每回合内玩家按初始区域 <span class="arithmatex"><span class="MathJax_Preview">A \sim F</span><script type="math/tex">A \sim F</script></span> 的顺序行棋。</li>
+</ul>
+<p>Client 在收到这一请求后，需要对数据段进行处理，并相应地更新图形化界面。</p>
+<h4 id="start_turn_op"><code>START_TURN_OP</code><a class="headerlink" href="#start_turn_op" title="Permanent link">&para;</a></h4>
+<p>当到某玩家移动棋子时，server 应向对应 client 发送 <code>START_TURN_OP</code> 请求并开始倒计时。注意已经获得胜利的玩家不应收到这一请求。</p>
+<h3 id="_2">错误处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>在任何时间，当 server 检查到 client 发来的请求产生错误时，应向 client 发送 <code>ERROR_OP</code> 请求，并将数据段 <code>data1</code> 设置为错误码，数据段 <code>data2</code> 设置为错误信息。Client 在收到这一请求后应视情况作出相应的处理。</p>
+<p>错误码的种类及其含义如下所示：</p>
+<ul>
+<li><code>INVALID_JOIN</code>：加入房间失败。可能由于用户名冲突引起。</li>
+<li><code>INVALID_MOVE</code>：棋子移动非法。</li>
+<li><code>INVALID_REQ</code>：无法解析该请求。</li>
+<li><code>NOT_IN_ROOM</code>：当前用户不在房间内。</li>
+<li><code>OUTTURN_MOVE</code>：当前不在自己行动的轮次。</li>
+<li><code>ROOM_IS_RUNNING</code>：当前房间内的游戏正在进行。</li>
+<li><code>ROOM_NOT_RUNNING</code>：当前房间内没有正在进行的游戏。</li>
+<li><code>OTHER_ERROR</code>：前面没有提及的其他错误。</li>
+</ul>
+<p>在 <code>ERROR_OP</code> 请求中，错误信息没有统一规定，同学们可以自行设计相关信息的格式或直接留空。</p>
 
               
             </article>
@@ -998,41 +1154,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="页脚">
-      
-        
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: Home" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../inst-rule/" class="md-footer__link md-footer__link--next" aria-label="下一页: 游戏规则" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              游戏规则
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

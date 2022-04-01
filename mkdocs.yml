@@ -11,9 +11,12 @@ nav:
   - Instructions:
     - 游戏玩法: instructions/inst-introduction.md
     - 游戏规则: instructions/inst-rule.md
+    - 网络交互简介: instructions/inst-network.md
+    - 网络通信协议: instructions/inst-network.md
   - Tasks:
     - Task 0: instructions/Task0.md
     - Task 1: instructions/Task1.md
+    - Task 2: instructions/Task2.md
   - Teams:
     - Team 0:
       - 小组简介: submission/Team0/index.md
