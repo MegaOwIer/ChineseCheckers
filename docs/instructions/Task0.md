@@ -1,12 +1,12 @@
-## Task 0: 熟悉 Git 和 Markdown
+# Task 0: 熟悉 Git 和 Markdown
 
 在本次任务中，你需要在本项目中创建你的小组的文件夹，并添加文件介绍你的小组的简要情况。
 
-### DeadLine
+## DeadLine
 
 你需要在 2022 年 3 月 31 日 23:59 前完成这一任务并提交 Pull Request。
 
-### 操作步骤
+## 操作步骤
 
 首先如项目根目录的 [REAME.md](https://github.com/MegaOwIer/ChineseCheckers/blob/master/README.md) 所述将本仓库 Fork 到你自己的账号并 clone 到本地。
 
