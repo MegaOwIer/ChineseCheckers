@@ -6,11 +6,9 @@
 
 ## `NetworkServer` 类
 
-`NetworkServer` 类以 `public` 方式继承自 `QTcpServer` 类，在 `networkserver.{h, c}` 中声明与实现。
+`NetworkServer` 类以 `public` 方式继承自 `QTcpServer` 类，在 `networkserver.{h, c}` 中声明与实现，封装了跳棋游戏服务端所需要的网络功能。
 
-`NetworkServer` 类封装了跳棋游戏服务端所需要的网络功能，并提供以下公有方法：
-
-----------
+### 公有方法
 
 ```cpp
 explicit NetworkServer::NetworkServer(QObject* parent = nullptr);
@@ -20,27 +18,73 @@ explicit NetworkServer::NetworkServer(QObject* parent = nullptr);
 参数列表：
 
 + `parent`: 应传入一个指向与当前 `NetworkServer` 对象绑定的窗口的指针。默认值为 `nullprt`，即不与任何窗口绑定。
-	- 如果你遵守开发规范，这个窗口的类型应该是一个你自定义的继承自 `QMainWindow` 的类。
 
 ----------
 
 ```cpp
 void NetworkServer::send(QTcpSocket* client, NetworkData data);
 ```
-公有方法。用于向指定机器发送信息。
+用于向指定机器发送信息。
 
 参数列表：
 
 + `client`: 表示目标机器。
 + `data`: 表示需要发送的数据。
 
+### 公有信号函数
+
+```c++
+void receive(QTcpSocket* client, NetworkData data);
+```
+
+当服务端收到客户端发来的消息并解析成功时发送 `receive` 信号。
+
+参数列表：
+
++ `client`: 表示发送消息的客户端。
++ `data`: 表示接收到的数据。
+
+----------
+
+```c++
+void parseError(const InvalidMessage& msg);
+```
+
+当服务端收到客户端发来的消息但解析失败时发送 `parseError` 信号。
+
+参数列表：
+
++ `msg`: 表示错误信息。
+
+----------
+
+```c++
+void leave(QTcpSocket *client);
+```
+
+当服务端旋开与某一客户端的连接时发送 `leave` 信号。
+
+参数列表：
+
++ `client`: 表示被断开连接的客户端。
+
+### 使用方法
+
+每一个 `NetworkServer` 实例应与一个服务端主窗口绑定，这个窗口的类型应该是一个你自定义的继承自 `QMainWindow` 的类。
+
+你需要在这个类中新增一个 `NetworkServer *` 类型的成员变量 `server`，并在窗口类的构造函数中加入下列代码来完成初始化和信号与槽的连接：
+
+```c++
+this->server = new NetworkServer(this);
+
+connect(this->server, &NetworkServer::receive, this, &ServerWindow::receiveData);
+```
+
 ## `NetworkData` 类
 
 `NetworkData` 类在 `networkdata.{h, c}` 中声明与实现，其主要功能是将需要发送和已经接收到的信息按照[通信协议](/instructions/inst-protocol)表示出来。
 
-`NetworkData` 类提供以下公有方法：
-
-----------
+### 公有方法
 
 ```cpp
 NetworkData::NetworkData(OPCODE op, QString data1, QString data2);
@@ -75,15 +119,13 @@ NetworkData::NetworkData(QByteArray message);
 ```cpp
 QByteArray NetworkData::encode();
 ```
-公有方法。用于将当前对象所表示的信息编码为 `QByteArray` 方便后续进行其他操作（如发送等）。
+用于将当前对象所表示的信息编码为 `QByteArray` 方便后续进行其他操作（如发送等）。
 
 ## `NetworkSocket` 类
 
-`NetworkSocket` 类以 `public` 方式继承自 `QObject` 类，在 `networksocket.{h, c}` 中声明与实现。用于表示本机与远程一台机器建立的连接。
+`NetworkSocket` 类以 `public` 方式继承自 `QObject` 类，在 `networksocket.{h, c}` 中声明与实现。用于表示本机与远程一台机器建立的连接，封装了跳棋游戏客户端所需要的网络功能。
 
-`NetworkSocket` 类封装了跳棋游戏客户端所需要的网络功能，并提供以下公有方法：
-
-----------
+### 公有方法
 
 ```cpp
 explicit NetworkSocket::NetworkSocket(QTcpSocket* socket, QObject* parent = nullptr);
@@ -95,14 +137,13 @@ explicit NetworkSocket::NetworkSocket(QTcpSocket* socket, QObject* parent = null
 + `socket`: 表示当前窗口监听的套接字文件，正常情况下应当传入一个新的套接字。
  	- 如果你并不了解上面那句话的含义，在构造函数中简单地为这个参数传入 `new QTcpSocket()` 即可。
 + `parent`: 应传入一个指向与当前 `NetworkSocket` 对象绑定的窗口的指针。默认值为 `nullprt`，即不与任何窗口绑定。
-	- 如果你遵守开发规范，这个窗口的类型应该是一个你自定义的继承自 `QMainWindow` 的类。
 
 ----------
 
 ```cpp
 void NetworkSocket::send(NetworkData data);
 ```
-公有方法。用于给当前对象表示的远程机器发送消息。
+用于给当前对象表示的远程机器发送消息。
 
 参数列表：
 
@@ -113,7 +154,7 @@ void NetworkSocket::send(NetworkData data);
 ```cpp
 void NetworkSocket::hello(const QString& host, quint16 port);
 ```
-公有方法。用于与指定远程机器的指定端口建立网络连接。若当前对象已经与远程建立连接，则先断开它。
+用于与指定远程机器的指定端口建立网络连接。若当前对象已经与远程建立连接，则先断开它。
 
 参数列表：
 
@@ -126,16 +167,65 @@ void NetworkSocket::hello(const QString& host, quint16 port);
 	
 	接入 `RUC-Web` 和 `RUC-Mobile` 的设备在同一局域网中。
 
+连接建立成功时会发射成员变量 `socket` 的信号 `connected()`；反之，连接建立失败时会发射成员变量 `socket` 的信号 `errorOccurred()`。
+
 ----------
 
 ```cpp
 QTcpSocket* NetworkSocket::base() const;
 ```
-公有方法。返回原生 TCP 套接字。
+返回原生 TCP 套接字（即成员变量 `socket`）。
+
+### 公有信号函数
+
+```c++
+void receive(NetworkData data);
+```
+
+当前客户端收到来自服务端的消息时发送 `reveive` 信号。
+
+参数列表：
+
++ `data`: 表示接收到的数据。
 
 ----------
 
-```cpp
-void NetworkSocket::bye();
+```c++
+void parseError(const InvalidMessage& msg);
 ```
-公有槽函数。用于关闭当前连接。
+
+当服务端收到客户端发来的消息但解析失败时发送 `parseError` 信号。
+
+参数列表：
+
++ `msg`: 表示错误信息。
+
+### 公有槽函数
+
+```c++
+void bye();
+```
+
+关闭当前客户端与服务端的连接。
+
+### 使用方法
+
+每一个 `NetworkSocket` 实例应与一个客户端主窗口绑定，这个窗口的类型应该是一个你自定义的继承自 `QMainWindow` 的类。
+
+你需要在这个类中新增一个 `NetworkSocket *` 类型的成员变量 `socket`，并在窗口类的构造函数中加入下列代码来完成初始化和信号与槽的连接：
+
+```c++
+this->socket = new NetworkSocket(new QTcpSocket(), this);
+
+connect(socket, &NetworkSocket::receive, this, &ClientWindow::receive);
+connect(socket->base(), &QAbstractSocket::disconnected, [=]() {
+	QMessageBox::critical(this, tr("Connection lost"), tr("Connection to server has closed"));
+});
+```
+
+特别地，如果你为方法 `socket->hello` 中发射的两个信号设计了处理函数，可以以如下方式连接
+
+```c++
+connect(socket->base(), &QAbstractSocket::errorOccurred, this, &ClientWindow::displayError);
+connect(socket->base(), &QAbstractSocket::connected, this, &ClientWindow::connected);
+```
