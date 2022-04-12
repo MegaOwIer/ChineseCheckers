@@ -229,3 +229,5 @@ connect(socket->base(), &QAbstractSocket::disconnected, [=]() {
 connect(socket->base(), &QAbstractSocket::errorOccurred, this, &ClientWindow::displayError);
 connect(socket->base(), &QAbstractSocket::connected, this, &ClientWindow::connected);
 ```
+
+其中 `ClientWindow::displayError` 和 `ClientWindow::connected` 分别是你实现的处理连接失败和连接成功的槽函数。
