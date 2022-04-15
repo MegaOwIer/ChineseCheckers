@@ -80,9 +80,11 @@ this->server = new NetworkServer(this);
 connect(this->server, &NetworkServer::receive, this, &ServerWindow::receiveData);
 ```
 
+其中 `ServerWindow::receiveData` 是你实现的处理服务端接收到的信息的槽函数。
+
 ## `NetworkData` 类
 
-`NetworkData` 类在 `networkdata.{h, c}` 中声明与实现，其主要功能是将需要发送和已经接收到的信息按照[通信协议](/instructions/inst-protocol)表示出来。
+`NetworkData` 类在 `networkdata.{h, c}` 中声明与实现，其主要功能是将需要发送和已经接收到的信息按照[通信协议](./inst-protocol.md)表示出来。
 
 ### 公有方法
 
