@@ -80,7 +80,7 @@
 
 
 
-#### 1、坐标的设置
+##### 1、坐标的设置
 
 ```c++
 void Widget:: assign_xy(int area, int inv, int topx, int topy)  // 用来分配六个区域的坐标
@@ -181,7 +181,7 @@ void Widget:: setCoordinate()
 
 
 
-#### 2、棋盘的绘制
+##### 2、棋盘的绘制
 
 ```c++
 void Widget :: paintEvent(QPaintEvent *)
@@ -253,7 +253,7 @@ void Widget :: paintEvent(QPaintEvent *)
 
 
 
-#### 3、点击某个棋子后的响应的槽函数
+##### 3、点击某个棋子后的响应的槽函数
 
 ```c++
 void Widget::chessClick(int player, int tx, int ty)
@@ -385,7 +385,7 @@ void Widget::chessClick(int player, int tx, int ty)
 
 
 
-#### 4、玩家选择某个走棋的位置的响应函数
+##### 4、玩家选择某个走棋的位置的响应函数
 
 ```c++
 void Widget::mousePressEvent(QMouseEvent *event)
@@ -496,7 +496,7 @@ void Widget::mousePressEvent(QMouseEvent *event)
 
 
 
-#### 5、判断玩家的移动是否合法的函数
+##### 5、判断玩家的移动是否合法的函数
 
 ```c++
 bool Widget :: isLegalMove(Chess* prechess , Coordinate_struct* des)
@@ -521,7 +521,7 @@ bool Widget :: isLegalMove(Chess* prechess , Coordinate_struct* des)
 
 
 
-#### 6、递归用于判断连跳的函数
+##### 6、递归用于判断连跳的函数
 
 ```c++
 bool Widget :: ifreach(int x , int y , Coordinate_struct* des)
@@ -573,16 +573,4 @@ bool Widget :: ifreach(int x , int y , Coordinate_struct* des)
 
 
 
-### 六、游戏运行结果截图
 
-现在第一阶段所有的要求已经全部完成了，经实验已经可以正常运行，下面是游戏试玩的一些截图。
-
-<img src="/Users/delia/Library/Application Support/typora-user-images/image-20220415214358139.png" alt="image-20220415214358139" style="zoom:60%;" />
-
-
-
-<img src="/Users/delia/Library/Application Support/typora-user-images/image-20220415214419321.png" alt="image-20220415214419321" style="zoom:60%;" />
-
-<img src="/Users/delia/Library/Application Support/typora-user-images/image-20220415214435883.png" alt="image-20220415214435883" style="zoom:60%;" />
-
-<img src="/Users/delia/Library/Application Support/typora-user-images/image-20220415214447519.png" alt="image-20220415214447519" style="zoom:60%;" />
