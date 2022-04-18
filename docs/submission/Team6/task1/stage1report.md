@@ -241,8 +241,6 @@ void Widget :: paintEvent(QPaintEvent *)
     for(int i = 0; i <= 12; i++)
         for(int j = 0; j <= i; j++)
             p.drawEllipse(QPoint(B_top_x - i * half_edge + j * 2 * half_edge ,B_top_y - i * _edge),chess_bias,chess_bias);
-
-
 }
 
 ```
@@ -329,7 +327,6 @@ void Widget::chessClick(int player, int tx, int ty)
                 }
                 else //第二次点击取消选中
                 {
-
                     clickTime = 0;
                     this->select->setIcon(QIcon(":/image2/4.png"));
                     this->select = nullptr; //取消选中
@@ -346,7 +343,6 @@ void Widget::chessClick(int player, int tx, int ty)
                 }
                 else //第二次点击取消选中
                 {
-
                     clickTime = 0;
                     this->select->setIcon(QIcon(":/image2/5.png"));
                     this->select = nullptr; //取消选中
@@ -363,7 +359,6 @@ void Widget::chessClick(int player, int tx, int ty)
                 }
                 else //第二次点击取消选中
                 {
-
                     clickTime = 0;
                     this->select->setIcon(QIcon(":/image2/6.png"));
                     this->select = nullptr; //取消选中
@@ -372,17 +367,12 @@ void Widget::chessClick(int player, int tx, int ty)
             }
             default :
             ;
-
-
         }
     }
 }
-
-
 ```
 
 具体细节见上面的注释。主要的操作方法是点击有棋子的地方，棋子处就会显示被选中的状态，然后再点一次，就会取消选中。
-
 
 
 ##### 4、玩家选择某个走棋的位置的响应函数
@@ -400,16 +390,16 @@ void Widget::mousePressEvent(QMouseEvent *event)
         {
             Coordinate_struct* ptr = *iter;
             //如果和当前棋子的距离足够近，那么就判断是操作该棋子
-         //   qDebug()<<ptr->x<<" "<<ptr->y;
+            //   qDebug()<<ptr->x<<" "<<ptr->y;
             if(get_dis(event->x() , event->y() , ptr->x , ptr->y) < Dis_lim  )//get_dis 是什么函数？
             {
                 //判断移动是否合法
-              //  qDebug()<<"1";
+                //  qDebug()<<"1";
                 if(isLegalMove(select , ptr))
                 {
 
                     qDebug()<<"judge as islegalmove";
-                //    qDebug()<<"2";
+                    //    qDebug()<<"2";
                     //更新数据
                     Update(this->select->x,this->select->y,ptr->x,ptr->y);
                     //提示下一名玩家下棋，并且设置图标            
@@ -420,25 +410,29 @@ void Widget::mousePressEvent(QMouseEvent *event)
                         {
                             this->select->setIcon(QIcon(":/image2/1.png"));
                             if(type == 2 || type == 6)
-                            {control =2 ; ui->label->setText("紫色下棋");}
-                          else
-                          {control=4;
+                            {
+                             control =2 ; ui->label->setText("紫色下棋");
+                            }
+                            else
+                            {
+                              control=4;
                               ui->label->setText("紫色下棋");
-                          }
-
+                            }
                             break;
                         }
                         case 2:
                         {
                             this->select->setIcon(QIcon(":/image2/2.png"));
-                        if(type==6)
-                        {control = 3;
-                            ui->label->setText("蓝色下棋");}
-                        else if(type==2)
-                        {
-                            control=1;
-                           ui->label->setText("蓝色下棋");
-                        }
+                            if(type==6)
+                            {
+                             control = 3;
+                             ui->label->setText("蓝色下棋");
+                            }
+                            else if(type==2)
+                            {
+                             control=1;
+                             ui->label->setText("蓝色下棋");
+                            }
                             break;
                         }
                         case 3:
@@ -458,15 +452,16 @@ void Widget::mousePressEvent(QMouseEvent *event)
                         case 5:
                         {
                             this->select->setIcon(QIcon(":/image2/5.png"));
-                        if(type==6)
-                           {control = 6;
-                            ui->label->setText("红色下棋");
-                           }
-                        else if(type==3)
-                        {
-                            control=1;
-                            ui->label->setText("红色下棋");
-                        }
+                            if(type==6)
+                            {
+                             control = 6;
+                             ui->label->setText("红色下棋");
+                            }
+                            else if(type==3)
+                            {
+                             control=1;
+                             ui->label->setText("红色下棋");                      
+                            }
                             break;
                         }
                         case 6:
@@ -477,10 +472,8 @@ void Widget::mousePressEvent(QMouseEvent *event)
                             break;
                         }
                         default:
-                    ;
-
+                               ;
                     }
-
                 }
                 this->clickTime=0;
                 this->select = nullptr;
@@ -488,7 +481,6 @@ void Widget::mousePressEvent(QMouseEvent *event)
             }
         }
     }
-
 }
 ```
 
