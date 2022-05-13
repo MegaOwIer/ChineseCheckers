@@ -53,6 +53,6 @@ UI界面如果有图片的话，选择图片进行操作是一个较好选择（
 3. qt的坐标系统(窗口与视口)其实不用管,一般用不到那么复杂(反正我没用到)
 4. 信号传递用connect信号和槽最方便，静态函数和全局变量设置不好很容易让人崩溃，，，
 ## 6.界面截图
-![avatar](image/1.jpg)
-![avatar](image/2.jpg)
-![avatar](image/2.jpg)
+![avatar](image/1.png)
+![avatar](image/2.png)
+![avatar](image/3.png)
