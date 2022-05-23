@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ask_server_or_client</class>
+ <widget class="QWidget" name="ask_server_or_client">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>669</width>
+    <height>467</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	background:rgb(255, 255, 255);
+	font-family:Century Gothic,sans-serif;
+}
+QFrame{
+background: blue;
+}
+QFrame{
+	border:sold 10px rgba(0,0,0);
+	background-image: url(I:/coding/C++project/final_checker/pictureSource/ask3.png);
+}
+QLineEdit{
+	color: #8d98a1;
+	background-color:#405361;
+}
+QLineEdit{
+	color: #8d98a1;
+	background-color:#405361;
+	font-size:18px;
+	border-style:outset;
+	border-radius:10px;
+}
+QPushButton{
+	background:rgba(85,170,225,0);
+	border-style:outset;
+	border-radius:10px; 
+	color:#FFE4C4;
+}
+QPushButton:pressed{
+	background-color:#405361;
+	border-style:inset;
+}
+QCheckBox{
+	background:rgba(85,170,225,0);
+	color:white;
+}
+QLabel{
+	background:rgba(85,170,225,0);
+	color:#EEE9BF;
+	font-style: italic bold;
+	font size:50px;
+}
+
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>671</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>40</y>
+      <width>561</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>17</pointsize>
+      <italic>true</italic>
+      <bold>false</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Please choose your network mode</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Client">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>190</y>
+      <width>141</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Client mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Server">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>190</y>
+      <width>141</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Server mode</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

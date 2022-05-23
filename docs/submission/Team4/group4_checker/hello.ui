@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Hello</class>
+ <widget class="QWidget" name="Hello">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>713</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>-1</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	background:rgb(255, 255, 255);
+	font-size:15px;
+	font-family:Century Gothic,sans-serif;
+}
+QFrame{
+background: blue;
+}
+QFrame{
+	border:sold 10px rgba(0,0,0);
+	background-image: url(I:/coding/ywt_vscode/picture8.jpg);
+}
+QLineEdit{
+	color: #8d98a1;
+	background-color:#405361;
+}
+QLineEdit{
+	color: #8d98a1;
+	background-color:#405361;
+	font-size:18px;
+	border-style:outset;
+	border-radius:10px;
+}
+QPushButton{
+	background:#CDC8B1;
+	border-style:outset;
+	border-radius:10px;
+ 
+}
+QPushButton:pressed{
+	background-color:#CDCDC1;
+	border-style:inset;
+}
+QCheckBox{
+	background:rgba(85,170,225,0);
+	color:white;
+}
+QLabel{
+	background:rgba(85,170,225,0);
+	color:white;
+	font-style: italic bold;
+	font size:50px;
+}
+
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>-1</y>
+     <width>691</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>180</y>
+      <width>441</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>number of checkers</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="a_single_mode">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>270</y>
+      <width>441</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A Single Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AI_mode">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>360</y>
+      <width>441</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AI Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="network_mode">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>450</y>
+      <width>441</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Network Mode</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>571</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>36</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 36pt &quot;Century Gothic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Chinese Checker !</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
