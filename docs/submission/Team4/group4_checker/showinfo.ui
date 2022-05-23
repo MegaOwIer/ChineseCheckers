@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ShowInfo</class>
+ <widget class="QWidget" name="ShowInfo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>557</width>
+    <height>274</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	background:rgb(255, 255, 255);
+	font-family:Century Gothic,sans-serif;
+}
+QFrame{
+background: blue;
+}
+QFrame{
+	border:sold 10px rgba(0,0,0);
+	background-image: url(I:/coding/C++project/final_checker/pictureSource/ask2.jpg);
+}
+QLineEdit{
+	color: #8d98a1;
+	background-color:#405361;
+}
+QLineEdit{
+	color: #8d98a1;
+	background-color:rgb(242,235,217);
+	font-size:18px;
+	border-style:outset;
+	border-radius:10px;
+}
+QPushButton{
+	background:#ced1d8;
+	border-style:outset;
+	border-radius:10px;
+ 
+}
+QPushButton:pressed{
+	background-color:#405361;
+	border-style:inset;
+}
+QCheckBox{
+	background:rgba(85,170,225,0);
+	color:white;
+}
+QLabel{
+	background:rgba(85,170,225,0);
+	color:black;
+	font-style: italic bold;
+	font size:150px;
+}
+
+QListView{
+	background:rgba(85,170,225,0);
+	color:black;
+	font-style: italic bold;
+	font size:50px;
+}
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>551</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="info">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>501</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="shark">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>100</y>
+      <width>141</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="detail">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>321</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="OK">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>341</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reConnect">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>341</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>connect again</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
