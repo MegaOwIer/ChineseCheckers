@@ -19,6 +19,7 @@ nav:
     - Task 1: instructions/Task1.md
     - Task 2: instructions/Task2.md
     - Task 3: instructions/Task3.md
+    - 期末答辩: instructions/final-presentation.md
   - Teams:
     - Team 0:
       - 小组简介: submission/Team0/index.md
@@ -34,6 +35,7 @@ nav:
       - 小组简介: submission/Team3/task0.md
     - Team 4:
       - 小组简介: submission/Team4/index.md
+      - 第一、二阶段总结: submission/Team4/report.md
     - Team 5:
       - 小组简介: submission/Team5/index.md
       - 第一阶段总结: submission/Team5/stage1/stage1.md
