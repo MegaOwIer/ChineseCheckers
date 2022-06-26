@@ -23,13 +23,13 @@
 
 ·2人对局，初始将棋子放在相对的角上
 
-![1](.\photo_task1\2player.png)
+![1](./photo_task1/2player.png)
 
 ·3人对局，将棋子互相间隔一个角摆放以平均分布
-![2](.\photo_task1\3player.png)
+![2](./photo_task1/3player.png)
 
 ·6人对局，每个玩家各占一角
-![3](.\photo_task1\6player.png)
+![3](./photo_task1/6player.png)
 
 ### 1.3 Chinese Checkers游戏规则
 
@@ -90,7 +90,7 @@
 
 而棋子的坐标，为了实现对齐，将棋子的奇数行左移。
 
-![4](.\photo_task1\chessboard.jpg)
+![4](./photo_task1/chessboard.jpg)
 
 ### 3.2 游戏过程
 
@@ -393,7 +393,7 @@ yBottom:[in] 指定矩形右下角的Y坐标。
 <https://blog.csdn.net/weixin_43577616/article/details/120706263>
 
 ## 7.效果show time
-![5](.\photo_task1\test.jpg)
+![5](./photo_task1/test.jpg)
 
 
 
