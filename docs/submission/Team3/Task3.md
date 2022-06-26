@@ -45,7 +45,7 @@
 
 ### 效果图展示
 
-![1](./photo/1.png)
+![image](https://github.com/Fxy2021201516/ChineseCheckers/blob/master/docs/submission/Team3/photo/1.png)
 
 ![2](./photo/2.png)
 
