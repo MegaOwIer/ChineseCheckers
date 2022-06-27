@@ -84,11 +84,15 @@ Client 在收到这一请求后，需要对数据段进行处理，并相应地�
 
 ### `START_TURN_OP`
 
-当到某玩家移动棋子时，server 应向对应 client 发送 `START_TURN_OP` 请求并开始倒计时。注意已经获得胜利的玩家不应收到这一请求。
+当轮到某玩家移动棋子时，server 应向全体 client 发送 `START_TURN_OP` 请求，并将数据段 `data1` 和 `data2` 分别设置为「行棋方的初始区域编号」和「回合开始时刻的 [Unix 时间戳](https://baike.baidu.com/item/unix%E6%97%B6%E9%97%B4%E6%88%B3/2078227)」。
+
+注意：已经获得胜利的玩家不应收到表明自己回合开始的请求。
 
 ## 错误处理
 
 在任何时间，当 server 检查到 client 发来的请求产生错误时，应向 client 发送 `ERROR_OP` 请求，并将数据段 `data1` 设置为错误码，数据段 `data2` 设置为错误信息。Client 在收到这一请求后应视情况作出相应的处理。
+
++ 为统一行为，在数据段 `data1` 传递错误码时应使用枚举类 `ERRCODE` 底层对应的整型变量的数值而非变量名称，其调用方法为 `QString(static_cast<int>(ERRCODE::XXXXX))`。
 
 错误码的种类及其含义如下所示：
 
