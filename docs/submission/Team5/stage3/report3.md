@@ -41,10 +41,10 @@
 ## 4.效果展示
 
 + 1.增加客户端显示房间号
-![image1](img3/waiting.png)
+![image1](./img3/waiting.png)
 
 + 2.增加AI功能并用相应颜色的点显示行棋轨迹
-![image2](img3/checkertable.png)
+![image2](./img3/checkertable.png)
 
 ## 5.仓库链接
 
