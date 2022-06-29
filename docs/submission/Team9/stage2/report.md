@@ -11,7 +11,8 @@
 
 ### 整体框架
 
-![](image/show.png)
+<img src="image/show.png" width="50%">
+
 
 整个流程中我们选择了**大厅-房间-战局**的结构，用户可以选择 _创建新房间_ 以生成一串16进制形式数字作为房间号，也可以选择 _加入房间_ 尝试进入指定房间号的房间。对战结束后，玩家关闭棋盘即可返回主界面并开始下一次游玩。服务端将房间和战局组合成一个整体，对客户端信号作出回应。
 
@@ -21,7 +22,7 @@
 
 通过在不同窗口之间传递 NetworkSocket，我们保证了多个窗口都可以收到 server 发出的数据；通过 `connect` 和 `disconnect`，我们确保所有数据在同一时间有且只有一个窗口作出响应。
 
-![](image/server_client.png)
+<img src="image/server_client.png" width="50%">
 
 ### 网络连接：服务端
 
@@ -35,7 +36,7 @@
 
 在客户端处，在比赛开始前，信号由大厅界面和房间界面处理，开始游戏后，套接字会被转交给战局界面：我们选择的运作方式是**转交socket至棋盘**，让 widget 对信号进行处理。
 
-![](image/2Clients_running.png)
+<img src="image/2Clients_running.png" width="50%">
 
 ## 问题&解决/构想
 
