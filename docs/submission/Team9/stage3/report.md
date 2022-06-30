@@ -1,14 +1,16 @@
 # 第九小组跳棋大作业实验报告
 
-> 第三阶段的主要工作是程云飞同学实现托管算法，这也是这份报告的主要新内容。
+> 第三阶段的关键工作是程云飞同学实现托管算法。
 > 
 > 但因为工作过程中我们也在不断增加功能，重构程序的框架，所以我们为框架与功能变动较大的工作：游戏棋盘，重新整理了报告，最后将三部分汇总成了这份总报告，其中网络部分没有变化。
 ## 项目介绍
 我们用 `Qt-C++` 设计并实现了一款带网络联机的交互良好的跳棋游戏。
 
-项目的文档使用 `doxygen` 生成在：http://doc.panjd.net/
+项目的[文档](http://doc.panjd.net/)使用 `doxygen` 生成，包含完整的接口和类的继承关系
 
-项目的演示视频在：https://www.bilibili.com/video/bv1dN4y1u7DL?vd_source=28602d173cf09845c54da253a564299c
+项目的[演示视频](https://www.bilibili.com/video/bv1dN4y1u7DL?vd_source=28602d173cf09845c54da253a564299c)发布在bilibili，展示了游戏流程和主要功能
+
+代码发布在仓库 [StopInvolution/ChineseCheckers](https://github.com/StopInvolution/ChineseCheckers)
 ## 总体设计与分工
 - 潘俊达(2021201626): 负责跳棋游戏功能与接口，跳棋底层逻辑和客户端，服务端跳棋信号处理
 - 贾昊霖(2021201552): 负责房间实现，服务端跳棋信号收发，以及房间UI设计
