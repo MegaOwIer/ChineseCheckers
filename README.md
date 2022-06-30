@@ -6,7 +6,7 @@
 
 ### 仓库结构说明
 
-本项目使用 `mkdocs` 部署，你可以访问 `https://cpp.ruc.megaowier.cc/` 查看页面。
+本项目使用 [MkDocs](https://github.com/mkdocs/mkdocs) 部署，你可以访问 [https://cpp.ruc.megaowier.cc/](https://cpp.ruc.megaowier.cc/) 查看页面。
 
 **大部分文件均与网站前端展示相关，除非任务有要求，否则请不要修改 `docs/` 目录之外的任何文件。**
 

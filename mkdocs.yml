@@ -11,28 +11,57 @@ nav:
   - Instructions:
     - 游戏玩法: instructions/inst-introduction.md
     - 游戏规则: instructions/inst-rule.md
+    - 网络交互简介: instructions/inst-network.md
+    - 网络通信协议: instructions/inst-protocol.md
+    - 网络通信接口: instructions/inst-api.md
   - Tasks:
     - Task 0: instructions/Task0.md
     - Task 1: instructions/Task1.md
+    - Task 2: instructions/Task2.md
+    - Task 3: instructions/Task3.md
+    - 期末答辩: instructions/final-presentation.md
+    - 联机演示: instructions/final-competition.md
   - Teams:
     - Team 0:
       - 小组简介: submission/Team0/index.md
       - 第一阶段总结: submission/Team0/stage1/report.md
     - Team 1:
       - 小组简介: submission/Team1/index.md
+      - 第一阶段总结: submission/Team1/Part1/Part1.md
+      - 第二阶段总结: submission/Team1/Part2/Part2.md
+      - 第三阶段总结: submission/Team1/Part3/Part3.md
+    - Team 2:
+      - 小组简介: submission/Team2/task0.md 
+      - 第一阶段报告: submission/Team2/task1/task1.md
+      - 第二阶段报告: submission/Team2/task2.md
+      - 第三阶段报告: submission/Team2/task3.md
     - Team 3:
       - 小组简介: submission/Team3/task0.md
+      - 期末实验报告: submission/Team3/Task3.md
     - Team 4:
       - 小组简介: submission/Team4/index.md
+      - 第一、二阶段总结: submission/Team4/report/report.md
     - Team 5:
       - 小组简介: submission/Team5/index.md
+      - 第一阶段总结: submission/Team5/stage1/stage1.md
+      - 第二阶段总结: submission/Team5/stage2/report2.md
+      - 第三阶段总结: submission/Team5/stage3/report3.md
     - Team 6:  
       - 小组简介: submission/Team6/index.md
+      - 第一阶段总结: submission/Team6/task1/stage1report.md
+      - 第二阶段总结：submission/Team6/task2/第二阶段实验报告.md
     - Team 7:
       - 小组简介: submission/Team7/index.md
+      - 第一阶段总结: submission/Team7/task1.md
+      - 第二阶段总结: submission/Team7/task2.md
+      - 第三阶段总结: submission/Team7/task3.md
+      - 期末答辩: submission/Team7/pre.md
+    - Team 8:
+      - 小组介绍: submission/Team8/index.md
     - Team 9:
       - 小组简介: submission/Team9/index.md
       - 第一阶段总结: submission/Team9/stage1/report.md
+      - 第二阶段总结: submission/Team9/stage2/report.md
     - Team 10:
       - 小组介绍: submission/Team10/Helloworld.md
 
