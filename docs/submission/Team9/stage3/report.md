@@ -293,7 +293,7 @@ $$depthChange = \lfloor log_{averageCandidateCount} \frac{restTime}{estimateTime
 
 6. 控制台
 
-   ![](image/console.png)
+    ![](image/console.png)
 
 7. 上帝模式
 
