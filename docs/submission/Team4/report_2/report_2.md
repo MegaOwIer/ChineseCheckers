@@ -17,12 +17,10 @@
 
 #### 次要实现内容
 - 设计富有<font color = #0099ff>**古风**</font>气息的初始化欢迎界面、精致美观的桌子和棋盘、优雅合理的界面布局
-
-    - <img src=/submission/Team4/report_2/picture/hello.png width = 22% /> <img src=/submission/Team4/report_2/picture/board.png width = 30% />
-
+	- <img src=/submission/Team4/report_2/picture/hello.png width = 22% /> <img src=/submission/Team4/report_2/picture/board.png width = 30% />
 - 设计告知用户当前轮到哪个颜色的棋手下棋的功能，并通过富有创意的方式进行展示，增加画面的色彩感
-    - <img src=/submission/Team4/report_2/picture/yellow.png width = 19% /> <img src=/submission/Team4/report_2/picture/red.png width = 19% /> <img src=/submission/Team4/report_2/picture/purple.png width = 19% /> 
-    - <img src=/submission/Team4/report_2/picture/blue.png width = 19% /> <img src=/submission/Team4/report_2/picture/cyan.png width = 19% /> <img src=/submission/Team4/report_2/picture/green.png width = 19% />
+	- <img src=/submission/Team4/report_2/picture/yellow.png width = 19% /> <img src=/submission/Team4/report_2/picture/red.png width = 19% /> <img src=/submission/Team4/report_2/picture/purple.png width = 19% /> 
+	- <img src=/submission/Team4/report_2/picture/blue.png width = 19% /> <img src=/submission/Team4/report_2/picture/cyan.png width = 19% /> <img src=/submission/Team4/report_2/picture/green.png width = 19% />
 - 实现终局判断功能
 ***
 
@@ -33,20 +31,20 @@
 - 设计从自定义坐标和统一标准坐标相互转换的函数`coord2standardCoord`和`standardCoord2coord`
 - 重用并封装第一阶段的绘图功能代码`paintEvent`，实现客户端的ui界面绘图功能和服务端的ui界面绘图功能，这样，使得客户端和服务端都能够看到当前房间中的对局状态
 - 利用客户端和服务端的通信函数实现对各类信号的接收和发送功能。接收信息主要通过对`receive`和`receiveData`两个函数的完善实现，发送信息的功能主要通过`send`函数的调用实现。此外，服务端能够<font color = #0099ff>**处理异常请求**</font>，并告知客户端错误信息
-    - <img src=/submission/Team4/report_2/picture/amaze.png width = 30% /> <img src=/submission/Team4/report_2/picture/again.png width = 30% /> <img src=/submission/Team4/report_2/picture/fail.png width = 30% />
+	- <img src=/submission/Team4/report_2/picture/amaze.png width = 30% /> <img src=/submission/Team4/report_2/picture/again.png width = 30% /> <img src=/submission/Team4/report_2/picture/fail.png width = 30% />
   
 #### 次要实现内容
 
 - 加入计时功能，添加<font color = #0099ff>**超时判负**</font>的操作
-    - <img src=/submission/Team4/report_2/picture/time1.png width = 40% />  <img src=/submission/Team4/report_2/picture/time2.png width = 40% />
+	- <img src=/submission/Team4/report_2/picture/time1.png width = 40% />  <img src=/submission/Team4/report_2/picture/time2.png width = 40% />
 - 设计了几个额外的**ui**窗口
-    - 询问当前程序是否作为客户端启动的窗口
-        - <img src=/submission/Team4/report_2/picture/ask_server_or_client.png width = 29% /></center>
-    - 初始进入房间的等待窗口
-        - <img src=/submission/Team4/report_2/picture/ask_join_room.png width = 29% />
-    - 显示并告知信息的消息窗口
-        - <img src=/submission/Team4/report_2/picture/showInfo.png width = 29% />
-    - 以上窗口均使用`.ui`文件设计,通过<font color = #0099ff>**css**</font>代码更改样式表
+	- 询问当前程序是否作为客户端启动的窗口
+		- <img src=/submission/Team4/report_2/picture/ask_server_or_client.png width = 29% /></center>
+	- 初始进入房间的等待窗口
+		- <img src=/submission/Team4/report_2/picture/ask_join_room.png width = 29% />
+	- 显示并告知信息的消息窗口
+		- <img src=/submission/Team4/report_2/picture/showInfo.png width = 29% />
+	- 以上窗口均使用`.ui`文件设计,通过<font color = #0099ff>**css**</font>代码更改样式表
 - 继承古风基调，强调程序界面风格排布
 
 ***
@@ -101,7 +99,7 @@
 
 - 易于识别：将棋盘中心点定义为(0,0)，将一条水平直线上相邻棋槽之间距离的$\frac{1}{2}$定义为水平横坐标的长度，将一条竖直直线上相邻的棋槽距离的$\frac{1}{2}$定义为竖直纵坐标的长度
 - 提高存取速度：使用二维数组来存储棋盘上的点坐标，并且二位数组的下标和棋盘上的点坐标<font color = #0099ff>**一一对应**</font>，这样只要知道坐标就可以直接获取对应的坐标对象
-    - 实现数组下标和点坐标对应的初始化函数`initCoords`
+	- 实现数组下标和点坐标对应的初始化函数`initCoords`
     
         ```C++
         // 数组坐标和系统坐标的转换函数
@@ -119,7 +117,7 @@
         }
         ```
     
-    - 直接存取坐标进行操作的<font color = #0099ff>**优越性**</font>(下列代码中curChosenCoord指的是当前棋盘上被用户选中的棋子，这个if语句用来分析当前位置适不适合作为行棋的终点，其中大量地利用了点坐标和数组下标直接对应的优势)
+	- 直接存取坐标进行操作的<font color = #0099ff>**优越性**</font>(下列代码中curChosenCoord指的是当前棋盘上被用户选中的棋子，这个if语句用来分析当前位置适不适合作为行棋的终点，其中大量地利用了点坐标和数组下标直接对应的优势)
     
         ```C++
         //查找行棋位置的可行性
@@ -144,7 +142,7 @@
 
 - 完成接收到各种信息时地处理函数，利用`receive`函数进行处理
 - 客户端涉及到了很多窗口的开闭，这里使用<font color = #0099ff>**Qt的内置功能**</font>来实现能够更加高效
-    - 信号和槽机制（connect）的使用
+	- 信号和槽机制（connect）的使用
         
         ```C++
         //点击按钮设置模式
