@@ -40,8 +40,7 @@ nav:
       - 期末实验报告: submission/Team3/Task3.md
     - Team 4:
       - 小组简介: submission/Team4/index.md
-      - 第一、二阶段总结: submission/Team4/report_2/report_2.md
-      - 第三阶段总结: submission/Team4/report_3/report_3.md
+      - 第一、二阶段总结: submission/Team4/report/report.md
     - Team 5:
       - 小组简介: submission/Team5/index.md
       - 第一阶段总结: submission/Team5/stage1/stage1.md
@@ -50,8 +49,8 @@ nav:
     - Team 6:  
       - 小组简介: submission/Team6/index.md
       - 第一阶段总结: submission/Team6/task1/stage1report.md
-      - 第二阶段总结: submission/Team6/task2/第二阶段实验报告.md
-      - 第三阶段总结: submission/Team6/task3/跳棋游戏第三阶段实验报告.md
+      - 第二阶段总结：submission/Team6/task2/第二阶段实验报告.md
+      - 第三阶段总结：submission/Team6/task3/跳棋游戏第三阶段实验报告.md
     - Team 7:
       - 小组简介: submission/Team7/index.md
       - 第一阶段总结: submission/Team7/task1.md
@@ -60,6 +59,8 @@ nav:
       - 期末答辩: submission/Team7/pre.md
     - Team 8:
       - 小组介绍: submission/Team8/index.md
+      - 第二阶段总结: submission/Team8/2.md
+      - 总报告: submission/Team8/final.md
     - Team 9:
       - 小组简介: submission/Team9/index.md
       - 第一阶段总结: submission/Team9/stage1/report.md
@@ -68,7 +69,7 @@ nav:
     - Team 10:
       - 小组介绍: submission/Team10/Helloworld.md
       - 第一阶段总结: submission/Team10/task1.md
-      - 总报告: 'submission/Team10/final report.md'
+      - 总报告: submission/Team10/final report.md
 
 
 
