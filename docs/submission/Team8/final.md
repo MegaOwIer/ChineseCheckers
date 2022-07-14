@@ -6,4 +6,5 @@
 * 张启豪：第一阶的段行棋规则，第二阶段  
 
 
-## 代码：https://github.com/zqh-jarvis/loveu
+## 代码
+<https://github.com/zqh-jarvis/loveu>
