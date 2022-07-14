@@ -1,0 +1,2519 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/submission/Team9/stage3/report/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+    
+    
+      
+        <title>总报告 - Chinese Checkers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.db9e7362.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Fira Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Chinese Checkers" class="md-header__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chinese Checkers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              总报告
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Chinese Checkers" class="md-nav__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Chinese Checkers
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-introduction/" class="md-nav__link">
+        游戏玩法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-rule/" class="md-nav__link">
+        游戏规则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-network/" class="md-nav__link">
+        网络交互简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-protocol/" class="md-nav__link">
+        网络通信协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-api/" class="md-nav__link">
+        网络通信接口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task0/" class="md-nav__link">
+        Task 0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task1/" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task2/" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task3/" class="md-nav__link">
+        Task 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/final-presentation/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/final-competition/" class="md-nav__link">
+        联机演示
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Teams
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Team 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Team 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team0/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Team 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Team 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/Part1/Part1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/Part2/Part2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/Part3/Part3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Team 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Team 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task1/task1/" class="md-nav__link">
+        第一阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task2/" class="md-nav__link">
+        第二阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task3/" class="md-nav__link">
+        第三阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Team 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Team 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team3/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team3/Task3/" class="md-nav__link">
+        期末实验报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Team 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Team 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team4/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team4/report_2/report_2/" class="md-nav__link">
+        第一、二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team4/report_3/report_3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Team 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Team 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage1/stage1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage2/report2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage3/report3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Team 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Team 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task1/stage1report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task2/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task3/%E8%B7%B3%E6%A3%8B%E6%B8%B8%E6%88%8F%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
+          Team 7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Team 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/pre/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9">
+          Team 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Team 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/final/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          Team 9
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          Team 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stage2/report/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          总报告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        总报告
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    项目介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    总体设计与分工
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    模块设计
+  </a>
+  
+    <nav class="md-nav" aria-label="模块设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    总体结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    棋盘设计
+  </a>
+  
+    <nav class="md-nav" aria-label="棋盘设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    框架设计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    游戏逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    离线，客户端与服务端多态设计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    玩家
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    控制台和托管
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    网络设计
+  </a>
+  
+    <nav class="md-nav" aria-label="网络设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    整体框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    服务端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    信号处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    AI设计
+  </a>
+  
+    <nav class="md-nav" aria-label="AI设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    贪心算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimax" class="md-nav__link">
+    Minimax算法：估值函数
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimax算法：估值函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0.棋局阶段分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.前进距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.行棋潜力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.最落后棋子前进距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    各类系数的确定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimax_1" class="md-nav__link">
+    Minimax 算法：优化
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimax 算法：优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpha-beta" class="md-nav__link">
+    Alpha-beta 剪枝
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    不考虑后退
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    “行棋潜力”项近似
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimax_2" class="md-nav__link">
+    Minimax 算法的时限控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    其他设计
+  </a>
+  
+    <nav class="md-nav" aria-label="其他设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    返回主界面机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    设置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    游戏功能说明与展示
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏功能说明与展示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    游戏功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    网络功能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    开发笔记
+  </a>
+  
+    <nav class="md-nav" aria-label="开发笔记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    如何正确使用前向定义使用相互包含的类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    为耗时任务设计多线程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    socket 所有权转移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    开发日志
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_11">
+          Team 10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_11">
+          <span class="md-nav__icon md-icon"></span>
+          Team 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/Helloworld/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/final%20report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    项目介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    总体设计与分工
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    模块设计
+  </a>
+  
+    <nav class="md-nav" aria-label="模块设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    总体结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    棋盘设计
+  </a>
+  
+    <nav class="md-nav" aria-label="棋盘设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    框架设计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    游戏逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    离线，客户端与服务端多态设计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    玩家
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    控制台和托管
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    网络设计
+  </a>
+  
+    <nav class="md-nav" aria-label="网络设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    整体框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    服务端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    信号处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    AI设计
+  </a>
+  
+    <nav class="md-nav" aria-label="AI设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    贪心算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimax" class="md-nav__link">
+    Minimax算法：估值函数
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimax算法：估值函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0.棋局阶段分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.前进距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.行棋潜力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.最落后棋子前进距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    各类系数的确定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimax_1" class="md-nav__link">
+    Minimax 算法：优化
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimax 算法：优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpha-beta" class="md-nav__link">
+    Alpha-beta 剪枝
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    不考虑后退
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    “行棋潜力”项近似
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimax_2" class="md-nav__link">
+    Minimax 算法的时限控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    其他设计
+  </a>
+  
+    <nav class="md-nav" aria-label="其他设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    返回主界面机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    设置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    游戏功能说明与展示
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏功能说明与展示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    游戏功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    网络功能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    开发笔记
+  </a>
+  
+    <nav class="md-nav" aria-label="开发笔记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    如何正确使用前向定义使用相互包含的类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    为耗时任务设计多线程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    socket 所有权转移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    开发日志
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/submission/Team9/stage3/report.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">第九小组跳棋大作业实验报告<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>第三阶段的关键工作是程云飞同学实现托管算法。</p>
+<p>但因为工作过程中我们也在不断增加功能，重构程序的框架，所以我们为框架与功能变动较大的工作：游戏棋盘，重新整理了报告，最后将三部分汇总成了这份总报告，其中网络部分没有变化。</p>
+</blockquote>
+<h2 id="_2">项目介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>我们用 <code>Qt-C++</code> 设计并实现了一款带网络联机的交互良好的跳棋游戏。</p>
+<p>项目的<a href="http://doc.panjd.net/">文档</a>使用 <code>doxygen</code> 生成，包含完整的接口和类的继承关系</p>
+<p>项目的<a href="https://www.bilibili.com/video/bv1dN4y1u7DL?vd_source=28602d173cf09845c54da253a564299c">演示视频</a>发布在bilibili，展示了游戏流程和主要功能</p>
+<p>代码发布在仓库 <a href="https://github.com/StopInvolution/ChineseCheckers">StopInvolution/ChineseCheckers</a></p>
+<h2 id="_3">总体设计与分工<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>潘俊达(2021201626): 负责跳棋游戏功能与接口，跳棋底层逻辑和客户端，服务端跳棋信号处理</li>
+<li>贾昊霖(2021201552): 负责房间实现，服务端跳棋信号收发，以及房间UI设计</li>
+<li>程云飞(2021201506): 负责托管 AI 实现</li>
+</ul>
+<blockquote>
+<p>具体分工可以参考<a href="#_30">开发日志</a></p>
+</blockquote>
+<h2 id="_4">模块设计<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">总体结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../image/class.jpg" /></p>
+<p>粉线代表派生关系，虚线代表所有关系，实线是功能或接口示例</p>
+<h3 id="_6">棋盘设计<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="_7">框架设计<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>总体上我们有3种棋盘，离线棋盘，客户端棋盘，服务端棋盘，后两者由前者继承。我们通过信号槽机制，统一了三种棋盘的信号发送和相应的棋盘处理，实现上表现在发送信号的时机，或者信号槽连接不同。</p>
+<p>我们用同一张图演示了这种机制在客户端棋盘，服务端(棋盘)，离线中的体现</p>
+<p><img alt="" src="../image/chessboard.png" /></p>
+<p>在结构上，显示窗口 <code>Widget</code> 拥有棋盘 <code>ChessBoard</code> 和重置棋盘按钮，棋盘拥有玩家 <code>Player</code>，控制台 <code>ConsoleWidget</code> 和 托管按钮，玩家拥有棋子 <code>Marble</code>。</p>
+<p>这种结构具备高度的拓展性，如同一窗口显示多张棋盘，或适应不同的跳棋规则。</p>
+<h4 id="_8">游戏逻辑<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>初始化棋盘</p>
+<p>通过 <code>{玩家:方位}字典</code> 和 <code>本地玩家列表</code> ，我们统一地处理初始化</p>
+</li>
+<li>
+<p>玩家轮换</p>
+<p>通过 <code>nextTurn</code> 函数，我们会在每次行棋(包括超时移走所有棋子这种行棋)后自动切换到下一个玩家。我们借此维护一个 <code>activatedPlayer</code> 来完成判断，和控制一个玩家是否有权利在这个回合移动它的棋子。</p>
+</li>
+<li>
+<p>行棋和判断</p>
+<p>玩家在自己的行动轮下选择一个棋子 <code>selectedChess</code> 后，会通过 <code>BFS</code> 计算出所有的可行棋位置，并且在对应位置放上一个 <code>hint-marble</code> 也就是提示棋子，它具有特殊的造型和点击事件。</p>
+<p>玩家接着点击某一提示棋子后，就会将 <code>selectedChess</code> 顺着 <code>BFS</code> 时存储的路径移动到对应位置上。</p>
+<p>所以玩家没有机会发出非法的行棋请求。</p>
+</li>
+<li>
+<p>超时</p>
+<p><code>nextTurn</code> 函数会重置一个计时器，计时器的超时事件是发出超时信号。处理函数的功能是移出这个玩家的所有棋子，并标记该玩家在 <code>nextTurn</code> 时跳过，同时移入犯规者列表。</p>
+</li>
+<li>
+<p>获胜与终局判断</p>
+<p>检查行棋玩家的棋子是否全部进入终点的区域，是则标记玩家，并移入胜利者列表。</p>
+<p>当超时或获胜后，会对两个列表的玩家数量加和，达到玩家数-1就会发出终局信号，并处理排行榜。</p>
+</li>
+<li>
+<p>托管</p>
+<p><code>nextTurn</code> 函数会适时发出本轮是本人行棋的信号。托管的开关即实时连接和断开信号和托管运算函数的连接。</p>
+<p>值得注意的是，我们在实现中使用了多线程，以提升交互体验，另外我们还设计了完善的锁和解锁机制，前者可以防止在托管计算过程玩家手动行棋，导致最终二次行棋，后者可以解除锁，并标记托管无效，在托管线程结束时不会执行行棋。</p>
+</li>
+<li>
+<p>旋转棋盘和回放</p>
+<p>旋转棋盘只需要改变棋盘坐标和窗口坐标的映射关系即可，在中间加入一个旋转变换。</p>
+<p>回放我们只需要存储行棋路线，并拓展棋子的移动函数，加入一个自销毁机制即延迟调用析构函数即可。</p>
+</li>
+</ul>
+<h4 id="_9">离线，客户端与服务端多态设计<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>客户端和服务端棋盘分别继承自离线棋盘，并用虚函数实现多态。</p>
+<ul>
+<li>
+<p>离线棋盘</p>
+<p>发出的信号和处理函数槽在同一个对象内连接。</p>
+</li>
+<li>
+<p>客户端棋盘</p>
+<p>收到网络通讯后，通过网络处理函数去调用对应的处理函数。</p>
+</li>
+<li>
+<p>服务端棋盘</p>
+<p>发出的信号不仅和处理函数槽自连接。同时外部的服务器也会将这个信号连接到广播函数上，实现广播功能。</p>
+</li>
+</ul>
+<h4 id="_10">玩家<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>玩家分为提示玩家和游戏玩家，其中提示玩家拥有提示棋子。通过提示玩家我们可以统一提示标志和正常棋子的控制方法。</p>
+<p>玩家还拥有一个托管函数指针，可以借此修改托管的算法。同时玩家还存储起点，终点，姓名，上一次行棋路径等信息。</p>
+<p>玩家类还被派生出服务器玩家</p>
+<h4 id="_11">控制台和托管<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>我们将正常游戏相关的功能通过按钮和编辑框的方式放置在游戏界面上。</p>
+<p>将开发者功能，或高级功能放到了控制台里。</p>
+<p>控制台可以实现例如上帝模式(使得每个位置都成为合法行棋位置)，切换AI算法，强制移动棋子等。</p>
+<h3 id="_12">网络设计<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h4 id="_13">整体框架<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../image/show.png" /></p>
+<p>整个流程中我们选择了<strong>大厅-房间-战局</strong>的结构，用户可以选择 <em>创建新房间</em> 以生成一串16进制形式数字作为房间号，也可以选择 <em>加入房间</em> 尝试进入指定房间号的房间。对战结束后，玩家关闭棋盘即可返回主界面并开始下一次游玩。服务端将房间和战局组合成一个整体，对客户端信号作出回应。</p>
+<h4 id="_14">客户端<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>在客户端创建时，程序立即在内存空间申请一个 <code>NetworkSocket</code>。这个套接字生命周期将与与客户端多人游戏界面生命周期保持一致。</p>
+<p>通过在不同窗口之间传递 <code>NetworkSocket</code>，我们保证了多个窗口都可以收到 server 发出的数据；通过 <code>connect</code> 和 <code>disconnect</code>，我们确保所有数据在同一时间有且只有一个窗口作出响应。</p>
+<h4 id="_15">服务端<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>在服务端处理上，我们选择了可拓展性比较强的一种写法：在 <code>ServerWidget</code> 中维护一个 <code>QVector&lt;Room&gt; roomList</code> 存储当前所有房间；接收消息之后找到对应房间再进行后续操作。</p>
+<p>此外，我们还在服务端内设计了控制台，控制台内可以输入指令实现诸如强制开始游戏，踢出玩家或打印玩家信息等一系列操作。</p>
+<h4 id="_16">信号处理<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p>在服务端上，我们选择了<strong>服务端接收-棋盘处理-服务端发射</strong>的运作方式，服务端通过调用函数向棋盘传递信息，棋盘则通过发射信号告知服务器相关操作的结果或间接发送数据，指挥服务器反馈，同时自身启动棋盘窗口实时展示。</p>
+<p>在客户端处，在比赛开始前，信号由大厅界面和房间界面处理，开始游戏后，套接字会被转交给战局界面：我们选择的运作方式是<strong>转交 <code>socket</code> 至棋盘</strong>，让 <code>widget</code> 对信号进行处理。</p>
+<h3 id="ai">AI设计<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
+<p>托管算法设计是本阶段的核心内容。我们采用了优化的 Minimax 算法作为默认的AI算法，另外有贪心算法供选择，以进行对比调试。</p>
+<h4 id="_17">贪心算法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>我们首先实现了贪心算法，只选择下一步使棋子前进最远的行棋路线。棋子前进距离的“远”由始末位置在下表所示的 dist 数组中值的差衡量。dist 数组的意义为，每个位置的dist值等于其前往目的地尽头处位置的单步跳跃步数。</p>
+<p>我们没有加入棋子的中心轴偏移惩罚，因为六边形行棋下，离中心轴较近或较远的的棋子可能离目的地有相同的跳跃步数，难以证明这类惩罚的正确性。</p>
+<!--
+|    |    |    |    |  1 |    |    |    |    |    |    |    |    |    |    |    |    |
+|    |    |    |    |  2 |  2 |    |    |    |    |    |    |    |    |    |    |    |
+|    |    |    |    |  3 |  3 |  3 |    |    |    |    |    |    |    |    |    |    |
+|    |    |    |    |  4 |  4 |  4 |  4 |    |    |    |    |    |    |    |    |    |
+|  9 |  8 |  7 |  6 |  5 |  5 |  5 |  5 |  5 |  6 |  7 |  8 |  9 |    |    |    |    |
+|    |  9 |  8 |  7 |  6 |  6 |  6 |  6 |  6 |  6 |  7 |  8 |  9 |    |    |    |    |
+|    |    |  9 |  8 |  7 |  7 |  7 |  7 |  7 |  7 |  7 |  8 |  9 |    |    |    |    |
+|    |    |    |  9 |  8 |  8 |  8 |  8 |  8 |  8 |  8 |  8 |  9 |    |    |    |    |
+|    |    |    |    |  9 |  9 |  9 |  9 |  9 |  9 |  9 |  9 |  9 |    |    |    |    |
+|    |    |    |    | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |    |    |    |
+|    |    |    |    | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 |    |    |
+|    |    |    |    | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 |    |
+|    |    |    |    | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 |
+|    |    |    |    |    |    |    |    |    | 14 | 14 | 14 | 14 |    |    |    |    |
+|    |    |    |    |    |    |    |    |    |    | 15 | 15 | 15 |    |    |    |    |
+|    |    |    |    |    |    |    |    |    |    |    | 16 | 16 |    |    |    |    |
+|    |    |    |    |    |    |    |    |    |    |    |    | 17 |    |    |    |    |
+-->
+<p><img alt="" src="../image/dist.png" /></p>
+<p>其中棋子从下方出发前往上方，距离目的地约近 dist 值越小。</p>
+<h4 id="minimax">Minimax算法：估值函数<a class="headerlink" href="#minimax" title="Permanent link">&para;</a></h4>
+<h5 id="0">0.棋局阶段分类<a class="headerlink" href="#0" title="Permanent link">&para;</a></h5>
+<p>我们将一盘跳棋分为三个阶段：开局 OPENING、中盘 MIDDLE、终局 ENDING，因为这三个阶段中的行棋策略具有不同特征。根据经验，<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 人局的开局阶段结束于 <span class="arithmatex"><span class="MathJax_Preview">10n</span><script type="math/tex">10n</script></span> 步左右，终局阶段开始于 <span class="arithmatex"><span class="MathJax_Preview">20n+20</span><script type="math/tex">20n+20</script></span> 步左右。</p>
+<p>估值函数为以下三项之和。</p>
+<h5 id="1">1.前进距离<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
+<p>与贪心算法相同，前进距离由dist数组计算得出。实践中为了奖励棋子进入目的地，进一步减小了目的地处的dist值。</p>
+<!--
+|    |    |    |    | -9 |    |    |    |    |    |    |    |    |    |    |    |    |
+|    |    |    |    | -4 | -4 |    |    |    |    |    |    |    |    |    |    |    |
+|    |    |    |    |  0 |  0 |  0 |    |    |    |    |    |    |    |    |    |    |
+|    |    |    |    |  3 |  3 |  3 |  3 |    |    |    |    |    |    |    |    |    |
+|  9 |  8 |  7 |  6 |  5 |  5 |  5 |  5 |  5 |  6 |  7 |  8 |  9 |    |    |    |    |
+|    |  9 |  8 |  7 |  6 |  6 |  6 |  6 |  6 |  6 |  7 |  8 |  9 |    |    |    |    |
+|    |    |  9 |  8 |  7 |  7 |  7 |  7 |  7 |  7 |  7 |  8 |  9 |    |    |    |    |
+|    |    |    |  9 |  8 |  8 |  8 |  8 |  8 |  8 |  8 |  8 |  9 |    |    |    |    |
+|    |    |    |    |  9 |  9 |  9 |  9 |  9 |  9 |  9 |  9 |  9 |    |    |    |    |
+|    |    |    |    | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |    |    |    |
+|    |    |    |    | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 | 11 |    |    |
+|    |    |    |    | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 | 12 |    |
+|    |    |    |    | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 | 13 |
+|    |    |    |    |    |    |    |    |    | 14 | 14 | 14 | 14 |    |    |    |    |
+|    |    |    |    |    |    |    |    |    |    | 15 | 15 | 15 |    |    |    |    |
+|    |    |    |    |    |    |    |    |    |    |    | 16 | 16 |    |    |    |    |
+|    |    |    |    |    |    |    |    |    |    |    |    | 17 |    |    |    |    |
+-->
+
+<p><img alt="" src="../image/modified_dist.png" /></p>
+<p>一个局面的前进距离估值为 <span class="arithmatex"><span class="MathJax_Preview">totalMyAdvance \times enemyCount - totalEnemyAdvance</span><script type="math/tex">totalMyAdvance \times enemyCount - totalEnemyAdvance</script></span>。</p>
+<p>为提高性能，减少重复计算，前进距离估值在 Minimax 搜索同时进行计算，作为中间参数在搜索树上从根向叶传递。本方的每一步棋的贡献为<span class="arithmatex"><span class="MathJax_Preview">myAdvance \times enemyCount</span><script type="math/tex">myAdvance \times enemyCount</script></span>，敌方的每一步棋贡献为 <span class="arithmatex"><span class="MathJax_Preview">-enemyAdvance</span><script type="math/tex">-enemyAdvance</script></span>。</p>
+<h5 id="2">2.行棋潜力<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
+<p>前进距离估值相同的两个棋局，人判断的好坏并不一定相同，这是因为它们棋形不同，导致下一步、下下步乃至之后的行棋潜力有差别。搜索、计算行棋后局面中每个棋子再走一步的最大前进距离。取最大的 <span class="arithmatex"><span class="MathJax_Preview">POTENTIALCOUNT</span><script type="math/tex">POTENTIALCOUNT</script></span> 个值，加权求和后乘以 <span class="arithmatex"><span class="MathJax_Preview">RATEOFPOTENTIAL</span><script type="math/tex">RATEOFPOTENTIAL</script></span> (系数)。</p>
+<p>具体地，<span class="arithmatex"><span class="MathJax_Preview">RATEOFPOTENTIAL</span><script type="math/tex">RATEOFPOTENTIAL</script></span> 与棋局阶段有关，开局时此系数最大以奖励形成好的棋形；终局时不考虑，因为最终没有棋子可以继续前进，总潜力会下降到0。</p>
+<h5 id="3">3.最落后棋子前进距离<a class="headerlink" href="#3" title="Permanent link">&para;</a></h5>
+<p>初步设计时，本项为棋子dist值的极差，但具体一盘好棋内棋子的极差应该是多少，很难给出一个统一标准。因此改进此项为最落后棋子的前进距离，用来惩罚一两个棋子落在最后的情况。</p>
+<p>一个局面相对于开始局面的落后棋子前进值为 <span class="arithmatex"><span class="MathJax_Preview">(nowMaxDist - originalMaxDist) \times RATEOFBACK</span><script type="math/tex">(nowMaxDist - originalMaxDist) \times RATEOFBACK</script></span> (系数)。</p>
+<p>具体地，<span class="arithmatex"><span class="MathJax_Preview">RATEOFBACK</span><script type="math/tex">RATEOFBACK</script></span> 与棋局阶段有关，开局时系数较小或不考虑，终局时系数最大。</p>
+<h5 id="_18">各类系数的确定<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h5>
+<p>通过控制台切换AI算法，使两个不同系数的AI对战，辅以人工判断确定最优系数。</p>
+<h4 id="minimax_1">Minimax 算法：优化<a class="headerlink" href="#minimax_1" title="Permanent link">&para;</a></h4>
+<h5 id="alpha-beta">Alpha-beta 剪枝<a class="headerlink" href="#alpha-beta" title="Permanent link">&para;</a></h5>
+<p>具体原理不再赘述。</p>
+<h5 id="_19">不考虑后退<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h5>
+<p>实际棋局中很难出现后退的下法，这一项优化在几乎不减弱性能的同时约能减少<span class="arithmatex"><span class="MathJax_Preview">1/3</span><script type="math/tex">1/3</script></span>的每步可行走法。</p>
+<h5 id="_20">“行棋潜力”项近似<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h5>
+<p>在每一个局面都搜索一遍可行下法、计算行棋潜力，时间开销太大。因此，可以将Minimax搜索树上一叶子节点的最近Max祖先节点的行棋潜力值近似作为该叶子节点的行棋潜力值。Max节点代表本方行棋，故可以在搜索可行下法的同时顺便计算行棋潜力。在两人或三人游戏中，近似前后只有一两步行棋的差别，行棋潜力改变的情况很少（因为不是每个棋子都统计，只计算最大的 <span class="arithmatex"><span class="MathJax_Preview">POTENTIALCOUNT</span><script type="math/tex">POTENTIALCOUNT</script></span> 项）。这一项优化在两人或三人游戏中只减弱较少性能并大幅提高效率。</p>
+<h4 id="minimax_2">Minimax 算法的时限控制<a class="headerlink" href="#minimax_2" title="Permanent link">&para;</a></h4>
+<p>称以搜索树根节点的一个子节点为根的子树为一个“搜索候选”。通过为每个搜索候选计时，以此估计剩余的搜索时间并与剩余时间比较，动态调整下一搜索候选的 Minimax 搜索深度，以最好利用时限，提高搜索性能。</p>
+<p>平均每局面的搜索候选数由总搜索候选数除以搜索节点数得出，用于计算搜索深度变化。</p>
+<p>具体地：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">estimateTime = thisCandidateTime \times unsearchedCandidateCount</div>
+<script type="math/tex; mode=display">estimateTime = thisCandidateTime \times unsearchedCandidateCount</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">averageCandidateCount = \frac{totalCandidate}{totalDfsNode}</div>
+<script type="math/tex; mode=display">averageCandidateCount = \frac{totalCandidate}{totalDfsNode}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">depthChange = \lfloor log_{averageCandidateCount} \frac{restTime}{estimateTime} \rfloor</div>
+<script type="math/tex; mode=display">depthChange = \lfloor log_{averageCandidateCount} \frac{restTime}{estimateTime} \rfloor</script>
+</div>
+<h3 id="_21">其他设计<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<h4 id="_22">返回主界面机制<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>子窗口打开后，我们会隐藏主窗口。为了实现关闭子窗口后回到主窗口的功能，我们在全局管理了各个窗口的指针。</p>
+<h4 id="_23">设置<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<p>我们用文件存储了设置信息，方便下次复用</p>
+<h2 id="_24">游戏功能说明与展示<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<h3 id="_25">游戏功能<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>有 2,3,4,6 个玩家的棋盘 &amp; 重置棋盘</p>
+</li>
+<li>
+<p>可行棋位置提示</p>
+<p><img alt="" src="../image/play.png" /></p>
+</li>
+<li>
+<p>行棋动画</p>
+<p>使用Qt动画库</p>
+</li>
+<li>
+<p>随机移动</p>
+</li>
+<li>
+<p>AI托管</p>
+<p>单步 和 全程托管</p>
+<p>同时支持强制中断，放弃执行还未计算完成的托管</p>
+<p>支持切换算法，如控制台输入 <code>agent username greedy</code></p>
+</li>
+<li>
+<p>控制台</p>
+<p><img alt="" src="../image/console.png" /></p>
+</li>
+<li>
+<p>上帝模式</p>
+<p>控制台中输入 <code>god 1</code> 打开</p>
+</li>
+<li>
+<p>棋盘旋转</p>
+</li>
+<li>
+<p>行棋回放</p>
+<p>点击玩家姓名即可回放其上一步行棋</p>
+</li>
+<li>
+<p>超时判负</p>
+</li>
+<li>
+<p>终局判断</p>
+<p>这里展示因超时判负而决出胜负的场景</p>
+<p><img alt="" src="../image/rank.png" /></p>
+</li>
+</ol>
+<h3 id="_26">网络功能<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>服务器/客户端房间连接与信息展示</p>
+</li>
+<li>
+<p>控制台</p>
+<p><img alt="" src="../image/server_client.png" /></p>
+</li>
+</ol>
+<h2 id="_27">开发笔记<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<h3 id="_28">如何正确使用前向定义使用相互包含的类<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>为了模仿 <code>Qt</code> 绑定父对象的结构，我们也进行了类似的设计，结果出来了头文件需要相互包含的问题，解决方案如下。</p>
+<p>在 <code>.h</code> 文件里，我们只进行最简单的定义，在 <code>.cpp</code> 文件里再 <code>#include&lt;...&gt;</code> 对应的头文件以使用类</p>
+<h3 id="_29">为耗时任务设计多线程<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p>耗时任务会阻塞线程，导致 UI 无法正常操作，所以我们学习并使用了多线程来分离耗时任务，这也是图形化界面常用的操作。</p>
+<h3 id="socket"><code>socket</code> 所有权转移<a class="headerlink" href="#socket" title="Permanent link">&para;</a></h3>
+<p>我们应该尽可能使用 <code>new</code> 的方法来生成对象方便移交所有权。我们在移交时会进行响应的信号槽断开，和连接新信号的操作。提高鲁棒性，避免如在游戏阶段误处理服务器错误发送的房间指令。</p>
+<h2 id="_30">开发日志<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>基于 commit 记录整理</p>
+</blockquote>
+<ul>
+<li>2022-03-11 停止内卷小组正式组建，新建文件夹 <code>ChineseCheckers</code>，开始学习 <code>Qt</code>。</li>
+<li>2022-03-14 确定 <code>ChessBoard</code>，<code>Player</code>，<code>Marble</code> 的设计架构。设计部分素材。【潘俊达】</li>
+<li>2022-03-15 实现棋子和背景的显示。【潘俊达】</li>
+<li>2022-03-16 实现了行棋合法性判断。重构代码，解决类之间 <code>circular reference</code> 的问题。【潘俊达】</li>
+<li>2022-03-17 实现选子、落子、提示棋子、玩家轮换、信息显示等操作。跳棋基本框架完成。【潘俊达】</li>
+<li>2022-03-18 实现 2,3,4,6 玩家数，托管(随机移动)，棋子移动动画。【潘俊达】</li>
+<li>2022-03-30 持续完善文档和注释，修复一些Bug。【潘俊达】</li>
+<li>2022-04-09 设计棋子素材，完成棋子图片元素显示。【贾昊霖】</li>
+<li>2022-04-15 增加了开始界面。【潘俊达】</li>
+<li>2022-04-15 第一阶段完成。</li>
+</ul>
+<hr />
+<ul>
+<li>2022-05-02 调整了坐标参考系。为棋盘增加了基于坐标而非对象的棋子移动接口。【潘俊达】</li>
+<li>2022-05-03 实现超时功能。【潘俊达】</li>
+<li>2022-05-05 初步实现了客户端和服务端房间连接逻辑和窗口设计。【贾昊霖】</li>
+<li>2022-05-05 实现基于网络协议的棋盘初始化接口。【潘俊达】</li>
+<li>2022-05-05 完善了房间连接和提示功能，修复若干BUG。【贾昊霖】</li>
+<li>2022-05-11 实现终局判断以及排名展示。【潘俊达】</li>
+<li>2022-05-11 实现客户端棋盘接收并处理网络数据。【潘俊达】</li>
+<li>2022-05-12 完善客户端网络交互逻辑，优化对局信息显示。【潘俊达】</li>
+<li>2022-05-13 实现棋盘中游戏状态信号发送。对接服务端。【潘俊达】</li>
+<li>2022-05-03 连接服务端棋盘，转发信息。【贾昊霖】</li>
+<li>2022-05-13 第二阶段完成。</li>
+</ul>
+<hr />
+<ul>
+<li>2022-05-14 增加了托管接口。【潘俊达】</li>
+<li>2022-05-19 实现了贪心 AI 和坐标旋转。【程云飞】</li>
+<li>2022-05-21 增加了客户端控制台。实现了旋转视角，回放行棋。更新了时间戳机制。【潘俊达】</li>
+<li>2022-06-05 实现设置信息记录。【贾昊霖】</li>
+<li>2022-06-10 实现双人 ab 剪枝 minmax 搜索 AI。【程云飞】</li>
+<li>2022-06-20 为 AI 托管实现多线程。【潘俊达】</li>
+<li>2022-06-25 重构了房间，完善了退出机制。【贾昊霖】</li>
+<li>2022-06-26 分离并重构了服务端棋盘。【潘俊达】</li>
+<li>2022-06-28 优化了按钮逻辑。【潘俊达】</li>
+<li>2022-06-28 实现3人AI，加入动态调节深度的功能。【程云飞】</li>
+<li>2022-06-28 第三阶段完成。</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../stage2/report/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第二阶段总结" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              第二阶段总结
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../Team10/Helloworld/" class="md-footer__link md-footer__link--next" aria-label="下一页: 小组介绍" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              小组介绍
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2106 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/submission/Team4/report_2/report_2/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+    
+    
+      
+        <title>第一、二阶段总结 - Chinese Checkers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.db9e7362.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Fira Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Chinese Checkers" class="md-header__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chinese Checkers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第一、二阶段总结
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Chinese Checkers" class="md-nav__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Chinese Checkers
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-introduction/" class="md-nav__link">
+        游戏玩法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-rule/" class="md-nav__link">
+        游戏规则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-network/" class="md-nav__link">
+        网络交互简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-protocol/" class="md-nav__link">
+        网络通信协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-api/" class="md-nav__link">
+        网络通信接口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task0/" class="md-nav__link">
+        Task 0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task1/" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task2/" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task3/" class="md-nav__link">
+        Task 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/final-presentation/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/final-competition/" class="md-nav__link">
+        联机演示
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Teams
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Team 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Team 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team0/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Team 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Team 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/Part1/Part1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/Part2/Part2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team1/Part3/Part3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Team 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Team 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task1/task1/" class="md-nav__link">
+        第一阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task2/" class="md-nav__link">
+        第二阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task3/" class="md-nav__link">
+        第三阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Team 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Team 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team3/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team3/Task3/" class="md-nav__link">
+        期末实验报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Team 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Team 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第一、二阶段总结
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第一、二阶段总结
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    效果展示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    实现内容
+  </a>
+  
+    <nav class="md-nav" aria-label="实现内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    第一阶段实现内容
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段实现内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    主要实现内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    次要实现内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    第二阶段实现内容
+  </a>
+  
+    <nav class="md-nav" aria-label="第二阶段实现内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    主要实现内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    次要实现内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    实现思路
+  </a>
+  
+    <nav class="md-nav" aria-label="实现思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    第一阶段实现思路
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段实现思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    界面绘制方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    坐标数组设计
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    第二阶段实现思路
+  </a>
+  
+    <nav class="md-nav" aria-label="第二阶段实现思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    服务端功能实现思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    客户端功能实现思路
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    其它
+  </a>
+  
+    <nav class="md-nav" aria-label="其它">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    代码反思录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    如果你也碰到一样的问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_3/report_3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Team 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Team 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage1/stage1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage2/report2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage3/report3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Team 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Team 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task1/stage1report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task2/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task3/%E8%B7%B3%E6%A3%8B%E6%B8%B8%E6%88%8F%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
+          Team 7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Team 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/pre/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9">
+          Team 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Team 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/final/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          Team 9
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          Team 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/stage2/report/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/stage3/report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_11">
+          Team 10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_11">
+          <span class="md-nav__icon md-icon"></span>
+          Team 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/Helloworld/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/final%20report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    效果展示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    实现内容
+  </a>
+  
+    <nav class="md-nav" aria-label="实现内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    第一阶段实现内容
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段实现内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    主要实现内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    次要实现内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    第二阶段实现内容
+  </a>
+  
+    <nav class="md-nav" aria-label="第二阶段实现内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    主要实现内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    次要实现内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    实现思路
+  </a>
+  
+    <nav class="md-nav" aria-label="实现思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    第一阶段实现思路
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段实现思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    界面绘制方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    坐标数组设计
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    第二阶段实现思路
+  </a>
+  
+    <nav class="md-nav" aria-label="第二阶段实现思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    服务端功能实现思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    客户端功能实现思路
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    其它
+  </a>
+  
+    <nav class="md-nav" aria-label="其它">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    代码反思录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    如果你也碰到一样的问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/submission/Team4/report_2/report_2.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">第四小组第一、二阶段实验报告<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">效果展示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><center><video src="/submission/Team4/report_2/picture/demo.mp4" width="600px" controls="controls"></video></center></p>
+<blockquote>
+<p>附：<a href="https://github.com/CentrifugalAI/assignment-of-team-4">代码仓库传送门</a></p>
+</blockquote>
+<h2 id="_3">实现内容<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">第一阶段实现内容<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="_5">主要实现内容<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>所有跳棋规则内支持的相关用户操作实现</li>
+<li>能够<font color = #0099ff><strong>阻止用户作出不合理的跳棋行为</strong></font>，如跳回已经跳过的位置、企图在间隔跳跃后接一步单步跳跃等</li>
+</ul>
+<h4 id="_6">次要实现内容<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>设计富有<font color = #0099ff><strong>古风</strong></font>气息的初始化欢迎界面、精致美观的桌子和棋盘、优雅合理的界面布局<ul>
+<li><img src=/submission/Team4/report_2/picture/hello.png width = 22% /> <img src=/submission/Team4/report_2/picture/board.png width = 30% /></li>
+</ul>
+</li>
+<li>设计告知用户当前轮到哪个颜色的棋手下棋的功能，并通过富有创意的方式进行展示，增加画面的色彩感<ul>
+<li><img src=/submission/Team4/report_2/picture/yellow.png width = 19% /> <img src=/submission/Team4/report_2/picture/red.png width = 19% /> <img src=/submission/Team4/report_2/picture/purple.png width = 19% /> </li>
+<li><img src=/submission/Team4/report_2/picture/blue.png width = 19% /> <img src=/submission/Team4/report_2/picture/cyan.png width = 19% /> <img src=/submission/Team4/report_2/picture/green.png width = 19% /></li>
+</ul>
+</li>
+<li>实现终局判断功能</li>
+</ul>
+<hr />
+<h3 id="_7">第二阶段实现内容<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="_8">主要实现内容<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>设计从自定义坐标和统一标准坐标相互转换的函数<code>coord2standardCoord</code>和<code>standardCoord2coord</code></li>
+<li>重用并封装第一阶段的绘图功能代码<code>paintEvent</code>，实现客户端的ui界面绘图功能和服务端的ui界面绘图功能，这样，使得客户端和服务端都能够看到当前房间中的对局状态</li>
+<li>利用客户端和服务端的通信函数实现对各类信号的接收和发送功能。接收信息主要通过对<code>receive</code>和<code>receiveData</code>两个函数的完善实现，发送信息的功能主要通过<code>send</code>函数的调用实现。此外，服务端能够<font color = #0099ff><strong>处理异常请求</strong></font>，并告知客户端错误信息<ul>
+<li><img src=/submission/Team4/report_2/picture/amaze.png width = 30% /> <img src=/submission/Team4/report_2/picture/again.png width = 30% /> <img src=/submission/Team4/report_2/picture/fail.png width = 30% /></li>
+</ul>
+</li>
+</ul>
+<h4 id="_9">次要实现内容<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li>加入计时功能，添加<font color = #0099ff><strong>超时判负</strong></font>的操作<ul>
+<li><img src=/submission/Team4/report_2/picture/time1.png width = 40% />  <img src=/submission/Team4/report_2/picture/time2.png width = 40% /></li>
+</ul>
+</li>
+<li>设计了几个额外的<strong>ui</strong>窗口<ul>
+<li>询问当前程序是否作为客户端启动的窗口<ul>
+<li><img src=/submission/Team4/report_2/picture/ask_server_or_client.png width = 29% /></center></li>
+</ul>
+</li>
+<li>初始进入房间的等待窗口<ul>
+<li><img src=/submission/Team4/report_2/picture/ask_join_room.png width = 29% /></li>
+</ul>
+</li>
+<li>显示并告知信息的消息窗口<ul>
+<li><img src=/submission/Team4/report_2/picture/showInfo.png width = 29% /></li>
+</ul>
+</li>
+<li>以上窗口均使用<code>.ui</code>文件设计,通过<font color = #0099ff><strong>css</strong></font>代码更改样式表</li>
+</ul>
+</li>
+<li>继承古风基调，强调程序界面风格排布</li>
+</ul>
+<hr />
+<h2 id="_10">实现思路<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">第一阶段实现思路<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h4 id="_12">界面绘制方法<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>调用<code>update</code>函数示例：以下为客户端完成间隔跳棋后调用了<code>update</code>函数的代码示例
+    <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">curCoord</span><span class="p">.</span><span class="n">coord_x</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">4</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">curCoord</span><span class="p">.</span><span class="n">coord_y</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">curUser</span><span class="o">-&gt;</span><span class="n">jumpTime</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">//跳跃次数+1</span>
+<span class="w">    </span><span class="c1">//记录轨迹</span>
+<span class="w">    </span><span class="n">curUser</span><span class="o">-&gt;</span><span class="n">moveTrack</span><span class="p">[</span><span class="n">curUser</span><span class="o">-&gt;</span><span class="n">jumpTime</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curChosenCoord</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">curUser</span><span class="o">-&gt;</span><span class="n">moveTrack</span><span class="p">[</span><span class="n">curUser</span><span class="o">-&gt;</span><span class="n">jumpTime</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curCoord</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">cancelChoose</span><span class="p">();</span><span class="w">  </span><span class="c1">//撤销已经选择的棋子</span>
+<span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">cancelFeasibility</span><span class="p">();</span><span class="w">  </span><span class="c1">//撤销所有的可行性标注</span>
+<span class="w">    </span><span class="n">choose</span><span class="p">(</span><span class="n">curCoord</span><span class="p">);</span><span class="w">      </span><span class="c1">//选择跳到的位置作为当前选择的位置</span>
+<span class="w">    </span><span class="n">search</span><span class="p">();</span><span class="w">              </span><span class="c1">//搜索可行性</span>
+<span class="w">    </span><span class="n">update</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p>重写<code>paintEvent</code>的代码示例
+    <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Board::paintEvent</span><span class="p">(</span><span class="n">QPaintEvent</span><span class="w"> </span><span class="o">*</span><span class="n">event</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">QPainter</span><span class="w"> </span><span class="n">painter</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">setDeskBackground</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"> </span><span class="c1">// 调用函数设置背景</span>
+<span class="w">    </span><span class="n">drawBoard</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"> </span><span class="c1">// 绘制棋盘布局</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">INIT_GAME</span><span class="p">)</span><span class="w">  </span><span class="c1">// 初始化一局游戏</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">initGame</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">USER_HAS_BEEN_INIT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">nextImag</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">updateChosenStateImag</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"> </span><span class="c1">//更新选择状态</span>
+<span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">updatePieceColorImag</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"> </span><span class="c1">//更新当前界面的所有棋子</span>
+<span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">updateFeasibilityImag</span><span class="p">(</span><span class="n">painter</span><span class="p">);</span><span class="w"> </span><span class="c1">//更新当前界面的可行性标志</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p>值得一提的是，事实上<code>update</code>重绘函数并不是Qt中非常高效的操作，但是其简便之处在于能够忠实地根据当前的状态重绘棋盘上的所有信息，每次都进入<code>paintEvent</code>确实是<font color = #0099ff><strong>损耗程序效率的行为</strong></font>，坦白而言这种方式显得<font color = #0099ff><strong>简洁却粗犷</strong></font>，但是它却为程序员提供了高效的开发途径，开发效率和程序运行效率的取舍体现了一种<font color = #0099ff><strong>设计哲学</strong></font></p>
+</li>
+</ul>
+<h4 id="_13">坐标数组设计<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>易于识别：将棋盘中心点定义为(0,0)，将一条水平直线上相邻棋槽之间距离的<span class="arithmatex"><span class="MathJax_Preview">\frac{1}{2}</span><script type="math/tex">\frac{1}{2}</script></span>定义为水平横坐标的长度，将一条竖直直线上相邻的棋槽距离的<span class="arithmatex"><span class="MathJax_Preview">\frac{1}{2}</span><script type="math/tex">\frac{1}{2}</script></span>定义为竖直纵坐标的长度</li>
+<li>
+<p>提高存取速度：使用二维数组来存储棋盘上的点坐标，并且二位数组的下标和棋盘上的点坐标<font color = #0099ff><strong>一一对应</strong></font>，这样只要知道坐标就可以直接获取对应的坐标对象</p>
+<ul>
+<li>
+<p>实现数组下标和点坐标对应的初始化函数<code>initCoords</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 数组坐标和系统坐标的转换函数</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">initCoords</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">24</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">coord_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">coord_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">setHaveSlot</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</li>
+<li>
+<p>直接存取坐标进行操作的<font color = #0099ff><strong>优越性</strong></font>(下列代码中curChosenCoord指的是当前棋盘上被用户选中的棋子，这个if语句用来分析当前位置适不适合作为行棋的终点，其中大量地利用了点坐标和数组下标直接对应的优势)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//查找行棋位置的可行性</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">-11</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_y</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">getColor</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">null</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">getHaveSlot</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">))</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">coords</span><span class="p">[</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">curChosenCoord</span><span class="p">.</span><span class="n">coord_y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">setFeasibility</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="_14">第二阶段实现思路<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h4 id="_15">服务端功能实现思路<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li>完成接收到各种信息时的处理函数，利用<code>receiveData</code>函数进行处理</li>
+<li>在各种信息的处理函数中相应地调用发送信息的函数，通知相应的客户端执行相应操作</li>
+<li>注意应该考虑到除了规定的一些操作符，客户端还有可能发来<font color = #0099ff><strong>规定以外的其它操作符</strong></font>，因此应该增加默认情况的处理机制</li>
+<li>服务端有义务对客户端发送的各种信息进行检查（不论客户端是否有完善的检查机制）</li>
+</ul>
+<h4 id="_16">客户端功能实现思路<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li>完成接收到各种信息时地处理函数，利用<code>receive</code>函数进行处理</li>
+<li>
+<p>客户端涉及到了很多窗口的开闭，这里使用<font color = #0099ff><strong>Qt的内置功能</strong></font>来实现能够更加高效</p>
+<ul>
+<li>
+<p>信号和槽机制（connect）的使用</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//点击按钮设置模式</span>
+<span class="n">connect</span><span class="p">(</span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">Client</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">QPushButton</span><span class="o">::</span><span class="n">clicked</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ask_server_or_client</span><span class="o">::</span><span class="n">setClientMode</span><span class="p">);</span><span class="w"></span>
+<span class="n">connect</span><span class="p">(</span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">Server</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">QPushButton</span><span class="o">::</span><span class="n">clicked</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ask_server_or_client</span><span class="o">::</span><span class="n">setServerMode</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">//设置按钮的点击导致窗口的关闭</span>
+<span class="n">connect</span><span class="p">(</span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">Client</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">QPushButton</span><span class="o">::</span><span class="n">clicked</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ask_server_or_client</span><span class="o">::</span><span class="n">close</span><span class="p">);</span><span class="w"></span>
+<span class="n">connect</span><span class="p">(</span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">Server</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">QPushButton</span><span class="o">::</span><span class="n">clicked</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ask_server_or_client</span><span class="o">::</span><span class="n">close</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</li>
+<li>
+<p>Qt的<code>setVisible</code>函数能够设置窗口的可视状态，利用这个函数能够非常轻松地实现窗口和部件的出现和消失</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="_17">其它<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">代码反思录<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>我设计了复杂的机制，毫无拘束地使用各种<font color = #0099ff><strong>危险</strong></font>的操作完成我希望实现的功能</p>
+<p>我知晓C++中那些<font color = #0099ff>无微不至的可以轻松地使用搜索引擎查找到的没必要记的细节</font>，并为知道这些感到由衷的自豪</p>
+<p>我把所有函数都写成<code>public</code>，丝毫没有注意到一些函数只是成员函数中的子过程，应该提高它们的权限避免误用</p>
+<p>我自以为全局变量简直是绝妙的设计，我在各种场合，各种函数中无所顾忌地使用全局变量，享受C++的<font color = #0099ff>宽容和便利</font></p>
+<p>我喜欢<font color = #0099ff>把各种功能写进一个函数里面</font>，我写的函数总是名不符实，比如，一个叫做“起床”的函数可能默默包含了“刷牙洗脸”甚至“吃早餐”的功能</p>
+<p>我不喜欢继承......所以我选择<font color = #0099ff>堆叠代码</font>，面对新的需求，我只是将原本的类改写成一个功能更加强大的类</p>
+<p>我碰到大量的bug，开始接受C++的报复</p>
+<p>我凝视着那个将近三千行的类，它在整个只有五千行的程序里显得如此扎眼，我陷入了沉思......</p>
+<p>它有好看的ui，有完整的功能，但没有OOP的灵魂</p>
+<p>它<font color = #0099ff>金玉其外，败絮其内</font></p>
+<p>我为这个脆弱的工程感到遗憾</p>
+<h3 id="_19">如果你也碰到一样的问题<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>C++是一门面向对象的语言</p>
+<p>面向对象是基于实践的伟大设计</p>
+<p>那些几十行上百行的代码<font color = #0099ff>只够让你知道最基本的知识点</font></p>
+<p>要真正理解面向对象，理解那些繁琐复杂，那些多么不讨人喜欢的继承，多态，模板，名称空间......</p>
+<p>需要去在几千行的代码里面晕头转向，去踩坑，去发现不足，去体会天才们为什么要发明OOP......</p>
+<p>这里简单地罗列一些工程设计的面向对象思维，感兴趣地同学可以google</p>
+<ul>
+<li>单一职责原则</li>
+<li>开闭原则</li>
+<li>里氏替换原则</li>
+<li>依赖倒置原则</li>
+<li>迪米特法则</li>
+<li>接口隔离原则</li>
+</ul>
+<p>写在最后：</p>
+<blockquote>
+<p><strong>实践是检验真理的唯一标准。</strong></p>
+</blockquote>
+<hr />
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 小组简介" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              小组简介
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../report_3/report_3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第三阶段总结" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              第三阶段总结
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

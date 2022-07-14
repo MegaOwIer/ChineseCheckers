@@ -1,0 +1,1981 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/submission/Team3/Task1/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+    
+    
+      
+        <title>Task1 - Chinese Checkers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.db9e7362.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Fira Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Chinese Checkers" class="md-header__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chinese Checkers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Chinese Checkers" class="md-nav__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Chinese Checkers
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/inst-introduction/" class="md-nav__link">
+        游戏玩法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/inst-rule/" class="md-nav__link">
+        游戏规则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/inst-network/" class="md-nav__link">
+        网络交互简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/inst-protocol/" class="md-nav__link">
+        网络通信协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/inst-api/" class="md-nav__link">
+        网络通信接口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/Task0/" class="md-nav__link">
+        Task 0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/Task1/" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/Task2/" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/Task3/" class="md-nav__link">
+        Task 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/final-presentation/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instructions/final-competition/" class="md-nav__link">
+        联机演示
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Teams
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Team 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Team 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team0/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Team 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Team 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team1/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team1/Part1/Part1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team1/Part2/Part2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team1/Part3/Part3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Team 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Team 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team2/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team2/task1/task1/" class="md-nav__link">
+        第一阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team2/task2/" class="md-nav__link">
+        第二阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team2/task3/" class="md-nav__link">
+        第三阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Team 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Team 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task3/" class="md-nav__link">
+        期末实验报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Team 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Team 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team4/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team4/report_2/report_2/" class="md-nav__link">
+        第一、二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team4/report_3/report_3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Team 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Team 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team5/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team5/stage1/stage1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team5/stage2/report2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team5/stage3/report3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Team 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Team 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team6/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team6/task1/stage1report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team6/task2/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team6/task3/%E8%B7%B3%E6%A3%8B%E6%B8%B8%E6%88%8F%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
+          Team 7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Team 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team7/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team7/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team7/task2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team7/task3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team7/pre/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9">
+          Team 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Team 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team8/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team8/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team8/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team8/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team8/final/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          Team 9
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          Team 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team9/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team9/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team9/stage2/report/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team9/stage3/report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_11">
+          Team 10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_11">
+          <span class="md-nav__icon md-icon"></span>
+          Team 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team10/Helloworld/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team10/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Team10/final%20report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.功能分析
+  </a>
+  
+    <nav class="md-nav" aria-label="1.功能分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-chinese-checkers" class="md-nav__link">
+    1.1 Chinese Checkers游戏基本功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-chinese-checkers" class="md-nav__link">
+    1.2 Chinese Checkers游戏玩法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-chinese-checkers" class="md-nav__link">
+    1.3 Chinese Checkers游戏规则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.游戏流程设计
+  </a>
+  
+    <nav class="md-nav" aria-label="2.游戏流程设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 整体思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mainwindow" class="md-nav__link">
+    2.2 主窗口（MainWindow）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-piece2" class="md-nav__link">
+    2.3 棋子类（piece2）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-board" class="md-nav__link">
+    2.4 棋盘类（board）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-gameplay" class="md-nav__link">
+    2.5 游戏规则的制定与实现（gameplay)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.实现细节
+  </a>
+  
+    <nav class="md-nav" aria-label="3.实现细节">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 设置棋子位置、棋盘可点击区域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 游戏过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 出现的问题
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 出现的问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 空指针：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 数学关系逻辑问题：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-qt" class="md-nav__link">
+    4.3 棋子移动时未考虑棋子逻辑坐标与Qt的图形界面的交互
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 知识点：
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 知识点：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-vectoriterator" class="md-nav__link">
+    5.1.    vector容器类似于数组，iterator行为类似于指针，用于遍历整个容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-qmouseevent" class="md-nav__link">
+    5.2.    QMouseEvent传入用于描述鼠标事件的参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-pushbuttonmousepressevent" class="md-nav__link">
+    5.3. 判断鼠标是否在pushButton上,从而保证可以在正确的时机进入mousePressEvent()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.查找及参考的资料
+  </a>
+  
+    <nav class="md-nav" aria-label="6.查找及参考的资料">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1通过查资料学习的语法与数据结构：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62qt" class="md-nav__link">
+    6.2通过查资料学习的Qt控件：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3通过查资料纠正的代码错误：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7show-time" class="md-nav__link">
+    7.效果show time
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/submission/Team3/Task1.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="task1">Task1<a class="headerlink" href="#task1" title="Permanent link">&para;</a></h1>
+<h2 id="1">1.功能分析<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11-chinese-checkers">1.1 Chinese Checkers游戏基本功能<a class="headerlink" href="#11-chinese-checkers" title="Permanent link">&para;</a></h3>
+<p>· 自由实现进入游戏、退出游戏
+· 可以自由选择2,3,6人模式，多玩家轮流操作实现本机对局
+· 美观、友好的图形界面
+· AI、托管（暂未实现）
+· 联网功能（暂未实现）
+· 终局判断（暂未实现）
+· 未实现每步限时、超时判负的功能</p>
+<h3 id="12-chinese-checkers">1.2 Chinese Checkers游戏玩法<a class="headerlink" href="#12-chinese-checkers" title="Permanent link">&para;</a></h3>
+<p>十子跳棋的棋盘，玩家的10枚棋子初始位置为所分配的角上的外四行</p>
+<p>·2人对局，初始将棋子放在相对的角上
+<img alt="1" src="../photo_task1/2player.png" /></p>
+<p>·3人对局，将棋子互相间隔一个角摆放以平均分布
+<img alt="2" src="../photo_task1/3player.png" /></p>
+<p>·6人对局，每个玩家各占一角
+<img alt="3" src="../photo_task1/6player.png" /></p>
+<h3 id="13-chinese-checkers">1.3 Chinese Checkers游戏规则<a class="headerlink" href="#13-chinese-checkers" title="Permanent link">&para;</a></h3>
+<ol>
+<li>平移：可以将棋子移向其周围相邻的 6个位置中的一个。平移不得连续进行。</li>
+<li>跳跃：己方棋子 A 和任一枚棋子 B 相邻（B 不限属于哪一方），且以 B 为中心 A 的对称点上没有其他棋子，则可以将 A 移动到这一对称点上。并且可以实现连续跳跃。</li>
+<li>不允许轮空。</li>
+<li>.终局，判断胜负（暂未实现）。</li>
+</ol>
+<h2 id="2">2.游戏流程设计<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 整体思路<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>首先创建一个主窗口，用于玩家选择游戏模式（即是2人、3人还是6人）；接下来依次创建棋子类、棋盘类；最后进行游戏规则的制定与实现。</p>
+<h3 id="22-mainwindow">2.2 主窗口（MainWindow）<a class="headerlink" href="#22-mainwindow" title="Permanent link">&para;</a></h3>
+<p>该类中主要包含多个按钮信号，以及多个函数用于点击某个按钮进行目的窗口的展示。</p>
+<h3 id="23-piece2">2.3 棋子类（piece2）<a class="headerlink" href="#23-piece2" title="Permanent link">&para;</a></h3>
+<p>该类中包含每个棋子当前位置、是否被选中、属于哪方的信息，以及多个函数用于获取棋子位置、改变棋子的位置等功能。</p>
+<h3 id="24-board">2.4 棋盘类（board）<a class="headerlink" href="#24-board" title="Permanent link">&para;</a></h3>
+<p>创建info结构体，用于存储棋盘每个位置的横纵坐标、是否被占用，并设置Piece2类指针来获取棋子相关信息。
+对棋盘进行初始化，然后生成有效棋盘（即每个点有对应的坐标。）</p>
+<h3 id="25-gameplay">2.5 游戏规则的制定与实现（gameplay)<a class="headerlink" href="#25-gameplay" title="Permanent link">&para;</a></h3>
+<p>设置QRectF容器，创建可点击区域，设置Piece2棋子，存储所有棋子，设置int型容器，用于遍历棋子可以走到的位置。</p>
+<p><code>void gameplay::mousePressEvent()</code>
+创建鼠标点击事件，点击棋子，进行移动，若被点击棋子能够移到合法位置，便进行移动，移动结束后改变棋盘信息，交换控制权，六方轮流移动。</p>
+<p><code>void gameplay::produceRectF()</code>
+创建棋盘可点击区域链表，即将棋盘的槽设立为鼠标可点击区域。</p>
+<p><code>void  gameplay::producePiece6Player()</code>
+生成玩家方的棋子，即将每个棋子按钮设置特定图片，棋子可视化。（我能偷偷夸一句，我们的棋子很漂亮嘛~）</p>
+<p><code>void gameplay::setPiece0()</code>把棋子按钮设置在棋盘的相对位置上，同时完成对棋盘相应位置数据的初始化。</p>
+<p><code>void gameplay::processClick0(int m,int n)</code>处理鼠标点击事件，即每次点击棋子的颜色变淡，可视化处理。</p>
+<p><code>void gameplay::changeInfo(int x1,int y1,int x2,int y2)</code>每次棋子为之发声改变时，将棋盘的信息进行改变。</p>
+<p><code>bool gameplay::isLegalMove(int x1,int y1,int x2,int y2)</code>用来判断棋子的移动是否合法。如果合法则进行移动。</p>
+<p><code>void gameplay::isLegalJump(int m1,int n1,int m2,int n2)</code>用来判断连跳是否合法，通过递归回溯实现。</p>
+<h2 id="3">3.实现细节<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 设置棋子位置、棋盘可点击区域<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>建立直角坐标系，通过Photoshop计算棋盘图片槽之间相隔距离，将每个坐标对应到棋盘图片槽的指定位置。</p>
+<p>而棋子的坐标，为了实现对齐，将棋子的奇数行左移。
+<img alt="4" src="../photo_task1/chessboard.jpg" /></p>
+<h3 id="32">3.2 游戏过程<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>3.2.1.总体思路</p>
+<p>运用条件语句、调用相关函数判断移动是否合法，isLegal容器将合法的、可以移动的移动后的坐标压栈。</p>
+<p>3.2.2.连跳</p>
+<p>采用递归的策略，首先对棋子A的六个方向进行搜索，判断是否存在棋子B，若有棋子B占用位置，则继续对棋子B的六个方向进行搜索，判断是否存在位置无棋子，若存在则进行递归，直至不在存在能连跳的位置结束递归。</p>
+<h2 id="4">4. 出现的问题<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 空指针：<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>以下问题：程序进入多人游戏时无窗口出现直接报错为“crash”</p>
+<p>4.1.1.  在遍历容器为每一个棋子设置槽函数时注意每方棋子在vector中和begin与end的位置关系</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Piece2</span><span class="o">*&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="mi">-50</span><span class="p">;</span><span class="n">iter</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//iterator 行为类似于指针，用于遍历整个容器</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//Piece2* ptr = *iter;</span>
+<span class="w">        </span><span class="n">connect</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">,</span><span class="n">SIGNAL</span><span class="p">(</span><span class="n">pieceInfo</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">)),</span><span class="k">this</span><span class="p">,</span><span class="n">SLOT</span><span class="p">(</span><span class="n">processClick0</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">)));</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//connet(指向棋子的指针，棋子里证明被点到的函数，本类：gameplay,gameplay里的处理点击的函数)</span>
+<span class="w">        </span><span class="c1">//begin是vector的开始，有60个棋子</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>4.1.2.  在生成棋盘时数学关系出错，导致在后面程序的运行中出现错误的对应关系，从而出现未被正确赋值的指针</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="w"> </span><span class="p">){</span><span class="w"></span>
+
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">&lt;</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">                        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">6</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">count</span><span class="p">].</span><span class="n">x</span><span class="o">=</span><span class="n">column1</span><span class="p">[</span><span class="mi">6</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">count</span><span class="p">];</span><span class="w"></span>
+<span class="w">                        </span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">&lt;</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">                        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][(</span><span class="mi">12</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">count</span><span class="p">].</span><span class="n">x</span><span class="o">=</span><span class="n">column0</span><span class="p">[(</span><span class="mi">12</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">count</span><span class="p">];</span><span class="w"></span>
+<span class="w">                        </span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="42">4.2 数学关系逻辑问题：<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>4.2.1.  问题：棋盘上棋子不在正确位置</p>
+<p>解决：更改设置棋子的时候数学关系
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">gameplay::setPiece0</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Piece2</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Piece2</span><span class="o">*&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">begin</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span><span class="c1">//小三角形中轴线</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">begin</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">count</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">;</span><span class="n">count</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ptr</span><span class="o">=*</span><span class="n">iter</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">setGeometry</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">begin</span><span class="o">+</span><span class="n">count</span><span class="p">].</span><span class="n">x</span><span class="p">,</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">begin</span><span class="o">+</span><span class="n">count</span><span class="p">].</span><span class="n">y</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">23</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">setPlace</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">begin</span><span class="o">+</span><span class="n">count</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">begin</span><span class="o">+</span><span class="n">count</span><span class="p">].</span><span class="n">flag</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">begin</span><span class="o">+</span><span class="n">count</span><span class="p">].</span><span class="n">piecePlace</span><span class="o">=</span><span class="n">ptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">iter</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Piece2</span><span class="o">*&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="mi">-50</span><span class="p">;</span><span class="n">iter</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ptr</span><span class="o">=*</span><span class="n">iter</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">setParent</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>4.2.2.  问题：连跳不能正常进行</p>
+<p>解决：递归前记得初始化
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">17</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">13</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">jumpFlag</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">isLegalJump</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">n2</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<p>4.2.3.  问题：一部分关系稍复杂的连跳不能正常进行</p>
+<p>解决：更正连跳中数学关系的错误
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">m1</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&amp;&amp;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">n1</span><span class="p">].</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">n1</span><span class="p">].</span><span class="n">flag</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="c1">//左下方</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">n1</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">m1</span><span class="o">&lt;</span><span class="mi">15</span><span class="o">&amp;&amp;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">][</span><span class="n">n1</span><span class="mi">-1</span><span class="p">].</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">][</span><span class="n">n1</span><span class="mi">-1</span><span class="p">].</span><span class="n">flag</span><span class="o">==</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">][</span><span class="n">n1</span><span class="mi">-1</span><span class="p">].</span><span class="n">jumpFlag</span><span class="o">!=</span><span class="mi">1</span><span class="p">)</span><span class="c1">//如果左面隔一个的位置是空的，那就是一次合法的跳跃</span>
+<span class="w">            </span><span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="o">==</span><span class="n">m2</span><span class="o">&amp;&amp;</span><span class="n">n1</span><span class="mi">-1</span><span class="o">==</span><span class="n">n2</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">isLegal</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="n">isLegal</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">n1</span><span class="mi">-1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">][</span><span class="n">n1</span><span class="mi">-1</span><span class="p">].</span><span class="n">jumpFlag</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">][</span><span class="n">n1</span><span class="mi">-1</span><span class="p">].</span><span class="n">jumpFlag</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">isLegalJump</span><span class="p">(</span><span class="n">m1</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">n1</span><span class="mi">-1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">n2</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="43-qt">4.3 棋子移动时未考虑棋子逻辑坐标与Qt的图形界面的交互<a class="headerlink" href="#43-qt" title="Permanent link">&para;</a></h3>
+<p>4.3.1.  问题：移动棋子，有正确的玩家控制权轮换，对棋子移动的合法性判断也体现棋子已经完成移动，但是不显示棋子移动且被移动棋子原位置仍可点击（并且在点击后crash）
+解决方法：在走棋时更改棋子作为一个按钮在界面上的位置信息（棋子继承QPushButton类）</p>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="o">-&gt;</span><span class="n">select</span><span class="o">-&gt;</span><span class="n">move</span><span class="p">(</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m2</span><span class="p">][</span><span class="n">n2</span><span class="p">].</span><span class="n">x</span><span class="p">,</span><span class="n">cb</span><span class="o">-&gt;</span><span class="n">chessBoard</span><span class="p">[</span><span class="n">m2</span><span class="p">][</span><span class="n">n2</span><span class="p">].</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h2 id="5">5. 知识点：<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51-vectoriterator">5.1.    vector容器类似于数组，iterator行为类似于指针，用于遍历整个容器<a class="headerlink" href="#51-vectoriterator" title="Permanent link">&para;</a></h3>
+<p>eg：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Piece2</span><span class="o">*&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">vectorPieces</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="mi">-50</span><span class="p">;</span><span class="n">iter</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//iterator 行为类似于指针，用于遍历整个容器</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//Piece2* ptr = *iter;</span>
+<span class="w">        </span><span class="n">connect</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">,</span><span class="n">SIGNAL</span><span class="p">(</span><span class="n">pieceInfo</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">)),</span><span class="k">this</span><span class="p">,</span><span class="n">SLOT</span><span class="p">(</span><span class="n">processClick0</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">)));</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//connet(指向棋子的指针，棋子里证明被点到的函数，本类：gameplay,gameplay里的处理点击的函数)</span>
+<span class="w">        </span><span class="c1">//begin是vector的开始，有60个棋子</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="52-qmouseevent">5.2.    QMouseEvent传入用于描述鼠标事件的参数<a class="headerlink" href="#52-qmouseevent" title="Permanent link">&para;</a></h3>
+<p>eg：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">gameplay::mousePressEvent</span><span class="p">(</span><span class="n">QMouseEvent</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="c1">//QMouseEvent传入用于描述鼠标事件的参数</span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">button</span><span class="p">()</span><span class="o">==</span><span class="n">Qt</span><span class="o">::</span><span class="n">LeftButton</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h3 id="53-pushbuttonmousepressevent">5.3. 判断鼠标是否在pushButton上,从而保证可以在正确的时机进入<code>mousePressEvent()</code><a class="headerlink" href="#53-pushbuttonmousepressevent" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">contains</span><span class="p">(</span><span class="w"> </span><span class="n">mapFromGlobal</span><span class="p">(</span><span class="n">QCursor</span><span class="o">::</span><span class="n">pos</span><span class="p">()))</span><span class="o">==</span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h2 id="6">6.查找及参考的资料<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1通过查资料学习的语法与数据结构：<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p>6.1.1.发现数组在插入，加上和删除元素时不变，自主参考资料学习了vector容器，搜索资料如下：</p>
+<p><a href="http://c.biancheng.net/view/6749.html">http://c.biancheng.net/view/6749.html</a>
+<a href="https://baike.baidu.com/item/push_back/7371301?fr=aladdin">https://baike.baidu.com/item/push_back/7371301?fr=aladdin</a>
+<a href="https://zhidao.baidu.com/question/362446939224399732.html">https://zhidao.baidu.com/question/362446939224399732.html</a>学习vector中at函数
+<a href="https://www.runoob.com/cplusplus/cpp-stl-tutorial.html">https://www.runoob.com/cplusplus/cpp-stl-tutorial.html</a>
+<a href="https://baike.baidu.com/item/%E8%BF%AD%E4%BB%A3%E5%99%A8/3803342?fromtitle=iterator&amp;fromid=226189&amp;fr=aladdin">https://baike.baidu.com/item/%E8%BF%AD%E4%BB%A3%E5%99%A8/3803342?fromtitle=iterator&amp;fromid=226189&amp;fr=aladdin</a></p>
+<p>学习代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//初始化一个空vector容量</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//向value容器中的尾部依次添加 S、T、L 字符</span>
+<span class="w">    </span><span class="n">value</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;S&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">value</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;T&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">value</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;L&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//调用 size() 成员函数容器中的元素个数</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;元素个数为：%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//使用迭代器遍历容器</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//向容器开头插入字符</span>
+<span class="w">    </span><span class="n">value</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;首个元素为：&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>6.1.2.在撰写游戏规则时，希望找到表现鼠标点击的函数，搜索资料如下：</p>
+<p><a href="https://www.cnblogs.com/aiguona/p/9999507.html">https://www.cnblogs.com/aiguona/p/9999507.html</a></p>
+<p>学习代码如下：
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Widget::mouseMoveEvent</span><span class="p">(</span><span class="n">QMouseEvent</span><span class="w"> </span><span class="o">*</span><span class="n">event</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 这里必须使用buttons()</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">buttons</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Qt</span><span class="o">::</span><span class="n">LeftButton</span><span class="p">)</span><span class="w"> </span><span class="c1">//进行的按位与</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">       </span><span class="err">···</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="62qt">6.2通过查资料学习的Qt控件：<a class="headerlink" href="#62qt" title="Permanent link">&para;</a></h3>
+<p>6.2.1.在鼠标点击时加判断条件，看其是否点在了控件上,从而保证可以在正确的时机进入<code>mousePressEvent()</code>，搜索资料如下：</p>
+<p><a href="https://blog.sdn.net/hwx802746/article/details/109244354">https://blog.sdn.net/hwx802746/article/details/109244354</a>
+<a href="https://blog.csdn.net/qq21497936/article/details/117070346">https://blog.csdn.net/qq21497936/article/details/117070346</a>
+学习代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 判断鼠标是否在pushButton上</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">pushButton</span><span class="o">-&gt;</span><span class="n">geometry</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">mapFromGlobal</span><span class="p">(</span><span class="n">QCursor</span><span class="o">::</span><span class="n">pos</span><span class="p">())))</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// do something...</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>6.2.2.希望移动棋子的逻辑坐标以后与Qt进行交互，可以实现整个棋子按钮（包括指针、图片）的移动，搜索资料如下：</p>
+<p><a href="https://blog.csdn.net/qq_15094525/article/details/100094935">https://blog.csdn.net/qq_15094525/article/details/100094935</a>
+<a href="https://blog.csdn.net/weixin_30305735/article/details/98425540">https://blog.csdn.net/weixin_30305735/article/details/98425540</a>
+<a href="https://blog.csdn.net/a8039974/article/details/90728536">https://blog.csdn.net/a8039974/article/details/90728536</a></p>
+<p>学习代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">MoveButton::keyPressEvent</span><span class="p">(</span><span class="n">QKeyEvent</span><span class="w"> </span><span class="o">*</span><span class="n">event</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">key</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Qt</span><span class="o">::</span><span class="n">Key_Left</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()</span><span class="mi">-4</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">move</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()</span><span class="mi">-4</span><span class="p">,</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>6.2.3.学习插入按钮，资料如下：</p>
+<p><a href="https://blog.csdn.net/qq_42564908/article/details/106338164">https://blog.csdn.net/qq_42564908/article/details/106338164</a>
+学习代码如下：</p>
+<p>所以用法是:</p>
+<p>1、在UI文件里加入按钮，objectName 设置为pushButtonA</p>
+<p>2、在引用的头文件（比如MainWindow.h）里加入按钮曹的声明：</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="nl">slots</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">on_pushButtonConnect_clicked</span><span class="p">();</span><span class="w"></span>
+<span class="mi">1</span><span class="w"></span>
+<span class="mi">2</span><span class="w"></span>
+<span class="mi">3</span><span class="err">、在调用处使用，（比如</span><span class="n">MainWindow</span><span class="p">.</span><span class="n">cpp</span><span class="err">）。</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_pushButtonConnect_clicked</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">qDebug</span><span class="p">(</span><span class="s">&quot;pushButtonConnect&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>6.2.4.设置可点击矩形区域，用于铺满棋盘，资料如下：</p>
+<p><a href="https://baike.baidu.com/item/SetRect/680218?fr=aladdin">https://baike.baidu.com/item/SetRect/680218?fr=aladdin</a>
+学习代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="err">函数原型编辑</span><span class="w"> </span>
+<span class="n">BOOL</span><span class="w"> </span><span class="n">SetRect</span><span class="p">(</span><span class="n">LPRECT</span><span class="w"> </span><span class="n">lprc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">xLeft</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">yTop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">xRight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">yBottom</span><span class="p">);</span><span class="w"></span>
+<span class="err">参数</span><span class="w"></span>
+<span class="nl">lprc</span><span class="p">:[</span><span class="n">out</span><span class="p">]</span><span class="w"> </span><span class="err">指向</span><span class="n">RECT</span><span class="w"> </span><span class="err">结构的指针，该指针包含了所要设置的矩形。</span><span class="w"></span>
+<span class="nl">xLeft</span><span class="p">:[</span><span class="n">in</span><span class="p">]</span><span class="w"> </span><span class="err">指定矩形左上角的</span><span class="n">X坐标</span><span class="err">。</span><span class="w"></span>
+<span class="nl">yTop</span><span class="p">:[</span><span class="n">in</span><span class="p">]</span><span class="w"> </span><span class="err">指定矩形左上角的</span><span class="n">Y坐标</span><span class="err">。</span><span class="w"></span>
+<span class="nl">xRight</span><span class="p">:[</span><span class="n">in</span><span class="p">]</span><span class="w"> </span><span class="err">指定矩形右下角的</span><span class="n">X坐标</span><span class="err">。</span><span class="w"></span>
+<span class="nl">yBottom</span><span class="p">:[</span><span class="n">in</span><span class="p">]</span><span class="w"> </span><span class="err">指定矩形右下角的</span><span class="n">Y坐标</span><span class="err">。</span><span class="w"></span>
+</code></pre></div>
+<h3 id="63">6.3通过查资料纠正的代码错误：<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p>6.3.1.程序crashed,经过请教师兄，进行调试（不会调试，进行资料搜索）：</p>
+<p><a href="https://blog.csdn.net/breakwind_/article/details/95060548">https://blog.csdn.net/breakwind_/article/details/95060548</a>
+<a href="https://blog.csdn.net/qq_33266987/article/details/53285693">https://blog.csdn.net/qq_33266987/article/details/53285693</a></p>
+<p>6.3.2.发现crashed的位置后确定为空指针导致程序崩溃，搜索资料如下：</p>
+<p><a href="https://blog.csdn.net/qq_43660925/article/details/122431484">https://blog.csdn.net/qq_43660925/article/details/122431484</a></p>
+<p>6.3.3.按钮突然没作用，搜索资料如下：</p>
+<p><a href="https://blog.csdn.net/weixin_43577616/article/details/120706263">https://blog.csdn.net/weixin_43577616/article/details/120706263</a></p>
+<h2 id="7show-time">7.效果show time<a class="headerlink" href="#7show-time" title="Permanent link">&para;</a></h2>
+<p><img alt="5" src="../photo_task1/test.jpg" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2093 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://cpp.ruc.megaowier.cc/submission/Team1/Part3/Part3/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+    
+    
+      
+        <title>第三阶段总结 - Chinese Checkers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.db9e7362.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Fira Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Chinese Checkers" class="md-header__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chinese Checkers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第三阶段总结
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Chinese Checkers" class="md-nav__button md-logo" aria-label="Chinese Checkers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Chinese Checkers
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/MegaOwIer/ChineseCheckers/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MegaOwIer/ChineseCheckers
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-introduction/" class="md-nav__link">
+        游戏玩法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-rule/" class="md-nav__link">
+        游戏规则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-network/" class="md-nav__link">
+        网络交互简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-protocol/" class="md-nav__link">
+        网络通信协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/inst-api/" class="md-nav__link">
+        网络通信接口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task0/" class="md-nav__link">
+        Task 0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task1/" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task2/" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/Task3/" class="md-nav__link">
+        Task 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/final-presentation/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions/final-competition/" class="md-nav__link">
+        联机演示
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Teams
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Team 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Team 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team0/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Team 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Team 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Part1/Part1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Part2/Part2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第三阶段总结
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第三阶段总结
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    托管程序
+  </a>
+  
+    <nav class="md-nav" aria-label="托管程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    预演搜索版
+  </a>
+  
+    <nav class="md-nav" aria-label="预演搜索版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    价值函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    搜索函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    接口&amp;第一步搜索
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    机器学习版
+  </a>
+  
+    <nav class="md-nav" aria-label="机器学习版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    训练搜索函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    训练函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    视角变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    连跳动画
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    最后一步行棋路径的查看功能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    问题&amp;&amp;解决
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    项目附加功能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    结语
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Team 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Team 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task1/task1/" class="md-nav__link">
+        第一阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task2/" class="md-nav__link">
+        第二阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team2/task3/" class="md-nav__link">
+        第三阶段报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Team 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Team 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team3/task0/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team3/Task3/" class="md-nav__link">
+        期末实验报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Team 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Team 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team4/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team4/report_2/report_2/" class="md-nav__link">
+        第一、二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team4/report_3/report_3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Team 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Team 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage1/stage1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage2/report2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team5/stage3/report3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Team 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Team 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task1/stage1report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task2/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team6/task3/%E8%B7%B3%E6%A3%8B%E6%B8%B8%E6%88%8F%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
+          Team 7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Team 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task2/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/task3/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team7/pre/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9">
+          Team 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Team 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/" class="md-nav__link">
+        第三阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team8/final/" class="md-nav__link">
+        期末答辩
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          Team 9
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          Team 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/" class="md-nav__link">
+        小组简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/stage1/report/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/stage2/report/" class="md-nav__link">
+        第二阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team9/stage3/report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_11">
+          Team 10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Team 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_11">
+          <span class="md-nav__icon md-icon"></span>
+          Team 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/Helloworld/" class="md-nav__link">
+        小组介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/task1/" class="md-nav__link">
+        第一阶段总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Team10/final%20report/" class="md-nav__link">
+        总报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    托管程序
+  </a>
+  
+    <nav class="md-nav" aria-label="托管程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    预演搜索版
+  </a>
+  
+    <nav class="md-nav" aria-label="预演搜索版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    价值函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    搜索函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    接口&amp;第一步搜索
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    机器学习版
+  </a>
+  
+    <nav class="md-nav" aria-label="机器学习版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    训练搜索函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    训练函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    视角变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    连跳动画
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    最后一步行棋路径的查看功能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    问题&amp;&amp;解决
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    项目附加功能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    结语
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/MegaOwIer/ChineseCheckers/edit/master/docs/submission/Team1/Part3/Part3.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">第一小组第三阶段实验报告<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>第三阶段，本组完成了AI自动下棋的程序，能够支持2人对局和3人对局的托管功能，并允许玩家随时在人工下棋与自动下棋之间切换。另外，我们还实现了客户端的全部可选功能，包括视角变换，连跳动画，以及最后一步行棋路径的查看功能。</p>
+<p>小组分工：  </p>
+<p>詹倚飞：  </p>
+<ol>
+<li>程序全部子界面的ui设计  </li>
+<li>程序全部图形素材的设计制作  </li>
+<li>第二阶段服务端的搭建和与客户端的对接  </li>
+<li>第三阶段游戏行棋动画、行棋音效与背景音乐的添加以及查看上一步功能  </li>
+</ol>
+<p>欧竞阳：  </p>
+<ol>
+<li>第一阶段跳棋整体框架的搭建  </li>
+<li>第二、三阶段客户端的接口实现  </li>
+<li>附加的视角切换功能  </li>
+</ol>
+<p>赵宸：  </p>
+<ol>
+<li>第三阶段托管功能  </li>
+</ol>
+<p>项目地址：<a href="https://github.com/VirusCollector/Group1_ChineseCheckers">https://github.com/VirusCollector/Group1_ChineseCheckers</a></p>
+<h2 id="_2">托管程序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">基本思想<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>在最早筹划托管部分的写作时，我们就有两个方向，一个是单纯采用短时记忆预演算法，即采用非长时记忆化、单纯依靠价值函数和蒙特卡洛束搜索，通过有效搜索剪枝（减掉明显不符合目标实现的策略步）和alpha-beta剪枝（在认为敌我均为理性人的前提下，选择当前搜索深度下该决策者的最优决策步）；另一个则采用机器学习中的强化学习算法，采用 n 步自举法：通过 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>-贪心控制随机游走，采用<span class="arithmatex"><span class="MathJax_Preview">\text{TD}(\lambda)</span><script type="math/tex">\text{TD}(\lambda)</script></span>，根据第一种方法的策略 <span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>，给出每一个状态下的 <span class="arithmatex"><span class="MathJax_Preview">V(\pi|a)</span><script type="math/tex">V(\pi|a)</script></span>，并由此解决短时记忆搜索死板、速度慢、短视的问题。  </p>
+<p>当然，最后还是用了第一种，但我们机器学习版的代码部分依然实现了，也会在后文给出粗略的解释。</p>
+<h3 id="_4">预演搜索版<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>这是我们程序最终采用的版本。基本的实现逻辑：根据游戏人数制定价值函数，通过 <code>use</code> 函数调用后，遍历当前所有的走法，将走出一步后的棋盘重建 <code>player</code> 类，将建好的棋盘传给alpha-beta搜索函数，最终评估所有走法中value最大的走法，将走法以 <code>vector&lt;QPoint&gt;</code> 的形式传出，交给网络端传出指令，同时移动本地棋盘。</p>
+<h4 id="_5">价值函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>函数的主要意义是对当前的局面做一个评估，与机器学习不同，预演算法的value函数是对整个局面的评估，是运行n步之后强行截胡，然后打分。因此在这样价值观（？）的驱使下，程序很难实现搭桥的操作，也很难对“上一步”做出评估。 </p>
+<p>对于两人的情况，由于是绝对的零和主义，因此我们的程序要紧盯对方的走向。首先对对方的形势做出评估。考虑到整体程序坐标的给出方式，我们不难发现，采用“x+y”可以准确的评估对面的棋子到我方大营的距离。  </p>
+<p>(PS：player是传进来的当前的各个玩家类，类内有10个marbles存有其相对坐标和绝对坐标，对于每个玩家来说自己所在的大营坐标是正的，所以算分要减。)  </p>
+<p>分数估计我们依据以下三条原则： </p>
+<ol>
+<li>以棋子进入对面大营为第一目标，以棋子尽可能往前靠为第二目标，以阻止对方获胜为第三目标。  </li>
+<li>尽可能不在本家留下孤寡老人，最大程度上避免被闷宫的情况。  </li>
+<li>尽可能不要偏离中线，避免程序一昧前进而偏到偏营。</li>
+</ol>
+<p>而执行value估计我们依据对家的棋子坐标代数和，人为的将估计分为三个阶段：前期、中期和后期。前期以尽可能往前走为目标，走的越靠前，就越能干扰对方的部署，防止对方背谱；同时对离开自家大营的棋子给予奖励；中期以整体战线往前推进为目的，惩罚尚未离开大营的棋子，少量奖励进入对方大营的棋子，同时控制不要过度偏离中线；后期以不留子为目的，尽可能控制顽固分子拉帮结派前往大营，增大对偏离中线的惩罚。  </p>
+<p>三人的得分评估也是同理，在这里不详细给出了。主要变化在将中场时机的判断从原本的对方，变成了“两个对方中走的快的那一个”，增大了偏离中线的惩罚，同时放宽了偏离中线的判准。</p>
+<h4 id="_6">搜索函数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>严格意义上的搜索函数是由两部分构成的，但另一部分涉及接口，后续在做介绍。搜索过程采用alpha-beta剪枝，同时在搜索中删去了明显不符合要求的走法，进一步缩小了搜索范围。搜索过程包括对当前某个棋子的所有可能路线的搜索，并将可能的路线采用marbles类中的hint_points（vector类型）储存，在这个搜索中删去不合理走法。  </p>
+<p>正式的搜索函数：
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">AI::alpha_beta</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">now</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">depth</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//如果发现当前状态下要下棋的玩家已经获胜，直接return +∞ 表示该玩家一定会沿这条路走，同时终止后续的深入搜索。</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">now</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">win</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">-10000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">depth</span><span class="p">)</span><span class="c1">//每深入一次depth-=1，到depth == 0的时候return一个value。</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">get_value2</span><span class="p">(</span><span class="n">now</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">get_value3</span><span class="p">(</span><span class="n">now</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">get_value6</span><span class="p">(</span><span class="n">now</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">//it&#39;s depth%num&#39;s turn, who has ten marbles.</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="c1">//调用一个自定义的搜索函数，实现部分搜索（now是当前所有玩家的player类，depth%num是当前搜索中要下棋的玩家，i为要移动的棋子）。</span>
+<span class="w">        </span><span class="n">now</span><span class="p">[</span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">search_hint_point</span><span class="p">(</span><span class="n">now</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="p">,</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">now</span><span class="p">[</span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="c1">//the ith has j ways to move.</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="c1">//set a chess for this way.</span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">next</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Player</span><span class="p">(</span><span class="n">now</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">i</span><span class="p">,</span><span class="n">now</span><span class="p">[</span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="o">!</span><span class="p">(</span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="p">)));</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//将原有的player类、要移动的玩家、棋子和移动信息传入自定义的player构造函数，并将新构造的player类传入下一次递归。</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//如果发生敌我交换，则对方的alpha就是我的-beta，表示当前走法对他来说能取到的最坏结果。</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="o">||</span><span class="n">depth</span><span class="o">%</span><span class="n">num</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">alpha_beta</span><span class="p">(</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">alpha</span><span class="o">&gt;</span><span class="n">value</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="nl">value</span><span class="p">:</span><span class="w"> </span><span class="n">alpha</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">alpha</span><span class="o">&gt;=</span><span class="w"> </span><span class="n">beta</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">alpha</span><span class="p">;</span><span class="c1">//剪枝，减掉“不理性”的走法。</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//如果没有发生敌我交换，则在我的视角他们两个的目的是一致的，因此他们有共同的alpha，beta</span>
+<span class="w">            </span><span class="k">else</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha_beta</span><span class="p">(</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">alpha</span><span class="o">&gt;</span><span class="n">value</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="nl">value</span> <span class="p">:</span><span class="w"> </span><span class="n">alpha</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">alpha</span><span class="o">&gt;=</span><span class="w"> </span><span class="n">beta</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">alpha</span><span class="p">;</span><span class="c1">//剪掉敌方不利于组织最优的解法</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">is</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">next</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">is</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">delete</span><span class="w"> </span><span class="n">next</span><span class="p">[</span><span class="n">is</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">next</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">alpha</span><span class="p">;</span><span class="c1">//当前的走法比之前的beta都要优，是目前为止的最优走法。</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h4 id="_7">接口&amp;第一步搜索<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>因为第一步搜索之后的局势是要一次要出现的，因此单独写便于做接口，具体的过程很简单：
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">now</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num_of_players</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">now</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Player</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">i</span><span class="p">,</span><span class="n">players</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="o">!</span><span class="n">k</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="c1">//初始化第一步，完成第一步的全搜索，并储存当前棋盘；</span>
+
+<span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha_beta</span><span class="p">(</span><span class="n">now</span><span class="p">,</span><span class="mi">20000</span><span class="p">,</span><span class="mi">-20000</span><span class="p">,</span><span class="n">_n</span><span class="p">,</span><span class="n">num_of_players</span><span class="p">);</span><span class="c1">//调用alpha-beta函数，给出当前走法的局势分（保证传入的alpha足够大，beta足够小）</span>
+<span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">&gt;</span><span class="n">max</span><span class="p">)</span><span class="c1">//如果大于最大值，予以保留</span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">players</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="_8">机器学习版<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>这里采用强化学习中最基础的n步自举法完成托管设计。即以 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 的概率随机游走，以 <span class="arithmatex"><span class="MathJax_Preview">1-\epsilon</span><script type="math/tex">1-\epsilon</script></span> 的概率按照上文给出的预演算法的策略 <span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span> 行走，按这样的策略 <span class="arithmatex"><span class="MathJax_Preview">\pi'</span><script type="math/tex">\pi'</script></span> 利用蒙特卡洛树搜索，即一次搜 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 步，再在不同的叶子节点展开，在最后给出底部搜索结果的全展开，根据棋子的移动赋分（不同于之前的局势赋分），最后在按 <span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>-折迭代当前得分。迭代方法采用时序差分的迭代法，即 <span class="arithmatex"><span class="MathJax_Preview">V(S) = V(S) + \alpha[R + \gamma^* V(S')-V(S)]</span><script type="math/tex">V(S) = V(S) + \alpha[R + \gamma^* V(S')-V(S)]</script></span> 的方法（<span class="arithmatex"><span class="MathJax_Preview">V(S)</span><script type="math/tex">V(S)</script></span>, <span class="arithmatex"><span class="MathJax_Preview">V(S')</span><script type="math/tex">V(S')</script></span> 表示需要迭代得而当前和下一步的局势分；<span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 表示单步收益函数；<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> 为折扣系数，个人认为是与上一种方法相比最大的优越性之所在），实际的实现主要由训练搜索函数、训练函数、使用函数和接口构成，接口除了文件的读入读出外与上文基本相同，不展开介绍。</p>
+<p>以下为后续使用的参数介绍：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define e 10</span><span class="c1">//即为ε</span>
+<span class="cp">#define t 3</span><span class="c1">//TD(λ)&#39;s λ.</span>
+<span class="cp">#define gama 0.8</span><span class="c1">//折扣函数折扣比</span>
+<span class="cp">#define alpha1 0.2</span><span class="c1">//步长参数</span>
+<span class="cp">#define playernum 3</span><span class="c1">//训练的游戏人数</span>
+<span class="cp">#define n 50</span><span class="c1">//既定单次训练的训练步数</span>
+</code></pre></div>
+<h4 id="_9">训练搜索函数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>主要就是用来贯彻落实（？）<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>-贪心算法和蒙特卡洛树搜索的，通过这个函数，将未来几步的走法存入到place中，便于后续TD-training使用。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">AI::TD_searching</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">QPoint</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">place</span><span class="p">)</span><span class="w"></span>
+<span class="c1">//num依次压栈表示每次移动的棋子标号；place依次压栈表示每次移动的棋子的移动目标</span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="c1">//以1-ε概率按策略π行走</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">place</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">use</span><span class="p">(</span><span class="n">ans</span><span class="p">));</span><span class="c1">//use为预演算法的应用函数，这里即为应用策略π决定路径</span>
+<span class="w">            </span><span class="n">num</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="c1">//按策略π确定棋子编号</span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">boardposition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">.</span><span class="n">back</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">update_playerposition</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="c1">//以ε概率随机游走</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span><span class="c1">//随机确定棋子编号</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">get_hint_points</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">way</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//随机确定棋子的移动方向</span>
+<span class="w">            </span><span class="n">place</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">[</span><span class="n">way</span><span class="p">]);</span><span class="w"></span>
+<span class="w">            </span><span class="n">num</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">boardposition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">.</span><span class="n">back</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">update_playerposition</span><span class="p">();</span><span class="c1">//更新棋盘</span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="_10">训练函数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>为了弥补在轨学习所产生的数据堆积，引起“有些点早已收敛，而有些局面还没开始”的情况，我们决定采取随机训练，选定中局作为训练起点，保证训练样本的均匀覆盖。具体的实现方式为在棋盘中开一个ui按钮，在中局启动训练，将当前棋盘状态传入代码；同时，在训练函数中给出收益函数 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>，采用和预演中一样的按坐标“x+y”的思路给分。通知采用γ折扣保证程序能足够“短视”，从而起到贪心的效果；另一方面，<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 不太大也能保证收敛能够持续进行。  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">AI::TD_training</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">readin</span><span class="p">();</span><span class="c1">//将之前的训练样本读入到save中，从而接着之前的训练继续</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">QPoint</span><span class="o">&gt;</span><span class="w"> </span><span class="n">place</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x_new</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">y_new</span><span class="p">,</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="n">flag_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*x，y表示当前的棋子坐标，x，y-new表示要前往的位置，</span>
+<span class="cm">    value代表收益函数，flag = 0表示搜索后发现之前没有迭代过这个局势，</span>
+<span class="cm">    flag = 1表示之前迭代过，直接继续迭代即可；*/</span><span class="w"></span>
+<span class="w">    </span><span class="n">TD</span><span class="w"> </span><span class="o">*</span><span class="n">td_now</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">td_past</span><span class="p">;</span><span class="c1">//past表示当前位置，now表示下一步走后局势</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="c1">//如果训练次数小于既定次数</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">num</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">place</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">temp_players</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Player</span><span class="o">*</span><span class="w"> </span><span class="nl">p</span><span class="p">:</span><span class="n">players</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">TD_searching</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">place</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">temp_players</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Player</span><span class="o">*</span><span class="w"> </span><span class="nl">p</span><span class="p">:</span><span class="n">players</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">flag_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">TD</span><span class="o">*</span><span class="w"> </span><span class="nl">p</span><span class="p">:</span><span class="n">save</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">equal</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">players</span><span class="p">,</span><span class="n">temp_players</span><span class="p">))</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//自定义相等，即当前的十个棋子的乱序位置与读取的save一致</span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">td_past</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">flag_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">flag_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="c1">//此前没有这个局势，新建一个</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">td_now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TD</span><span class="p">(</span><span class="n">temp_players</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">-&gt;</span><span class="n">playerposition</span><span class="p">.</span><span class="n">x</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">-&gt;</span><span class="n">playerposition</span><span class="p">.</span><span class="n">y</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">-&gt;</span><span class="n">boardposition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="n">x_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">y_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="n">TD</span><span class="o">*</span><span class="w"> </span><span class="nl">p</span><span class="p">:</span><span class="n">save</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">equal</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">players</span><span class="p">,</span><span class="w"> </span><span class="n">temp_players</span><span class="p">))</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//搜索相等的存储，进行迭代</span>
+<span class="w">                </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">td_now</span><span class="o">-&gt;</span><span class="n">values</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">values</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gama</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">gama</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x_new</span><span class="o">+</span><span class="n">y_new</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">get_hint_points</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="c1">//如果这个点的走法还没搜过，先进行搜索</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="n">QPoint</span><span class="w"> </span><span class="nl">j</span><span class="p">:</span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">gama</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="o">-</span><span class="p">(</span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()</span><span class="w"></span>
+<span class="w">                </span><span class="o">+</span><span class="n">temp_players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">()));</span><span class="c1">//采用γ-折进行分数累计</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">td_now</span><span class="o">-&gt;</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">flag_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="c1">//这个点尚未存储过，在save中新建档</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">save</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">td_now</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">delete</span><span class="w"> </span><span class="n">td_now</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="c1">//否则直接搜索然后更新原有档案</span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">td_past</span><span class="o">-&gt;</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td_past</span><span class="o">-&gt;</span><span class="n">values</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alpha1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">td_now</span><span class="o">-&gt;</span><span class="n">values</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">td_past</span><span class="o">-&gt;</span><span class="n">values</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//一次搜索完成，将当前局势随机走一步转到一个新的局势进行迭代。</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">random</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">random</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">get_hint_points</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">random</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">boardposition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">        </span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">random</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="n">hint_points</span><span class="p">[</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">random</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">hint_points</span><span class="p">.</span><span class="n">size</span><span class="p">())];</span><span class="w"></span>
+<span class="w">        </span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">num_of_players</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">marbles</span><span class="p">[</span><span class="n">random</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">update_playerposition</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">sendout</span><span class="p">();</span><span class="c1">//单次学习完成，将存储的内容吐到存储的文档里</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_11">视角变换<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>在第二阶段，每个玩家在本地客户端显示的初始区域均为服务端发送的区域。视角变换后，每位玩家的初始区域在自己的客户端上均被显示在正下方（即区域 D），这时每个棋子的新坐标相当于对旧坐标施加一个线性变换后得到的结果。我们可以通过每名玩家原来的区域和视角变换变换后的区域（即区域 D），计算出线性变换的矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，然后对于从服务端接受的 <code>MOVE_OP</code> 操作数中的每个坐标，通过左乘矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，算出新坐标，再调用移动棋子的函数；同理，向服务端发送的坐标，也需要左乘矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^{-1}</span><script type="math/tex">A^{-1}</script></span>，算出旧坐标后再发送。</p>
+<h2 id="_12">连跳动画<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>连跳过程其实就是每一步跳跃过程的合并，不过每一次跳跃有相应的间隔时间。由于在点击位移终点时已经完成了跳跃全路径的搜索，因而本程序的思路是从起始点到终点每两个相邻点都要展示一次平移动画，间隔0.5秒。这里运用 <code>QPropertyAnimation</code> 类的平移动画库实现平移效果最简洁。</p>
+<h2 id="_13">最后一步行棋路径的查看功能<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>主要想法依然是玩家能够点击任意在场游戏玩家来查看他们的上一步行棋路径，因此为了不在主界面加6个按钮破坏界面美感，我在右上角单独设置了“查看上一步”按钮，点击某个玩家即可调用该玩家类的方法展示他的上一步行棋路径。</p>
+<h2 id="_14">问题&amp;&amp;解决<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<ol>
+<li>在实现连跳动画后，我们发现AI的速度大幅降低,采用原来的搜索深度完全无法在15秒内给出结果。经过一步步版本回溯后我们发现，问题出在<code>marble</code>类添加的一个<code>music</code>类成员。这个成员继承了<code>QWidget</code>类，初始化会消耗较长的时间。而AI在搜索过程中会创建大量的<code>marble</code>类对象，每次初始化时都会有大量的时间浪费。  </li>
+</ol>
+<p>解决方案：将音乐音效类转移至widget主窗口，需要音乐音效时调用主窗口的函数。  </p>
+<ol>
+<li>关于连续跳跃的动画，不能简单的运用循环来完成，因为动画类指针每次指向的只能是1个动画，在程序运行速度&lt;&lt;0.5s时，后面动画的代码已经执行，但由于前面的动画还未结束故不能展示出后面动画的效果。相应的解决方案是在每一个动画发送finished()信号后再执行下一个动画，即可使动画具有连贯性。</li>
+</ol>
+<h2 id="_15">项目附加功能<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<ol>
+<li>背景音乐和行棋音效。  </li>
+<li>展示行棋步数、当前行棋方、剩余时间。  </li>
+<li>实现6人托管。  </li>
+<li>可以查看当前房间的所有玩家。  </li>
+</ol>
+<h2 id="_16">结语<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>执笔到此，回顾做大作业的过程，内心还是有非常多的感悟的：找图抠图时的无比抓狂，设计ui界面时的仔细修参，做服务器时的步步为营，调bug时的无能为力......思来总有些“衣带渐宽终不悔”的感觉。这个工程项目于我们而言，并不是仅仅了解一种新的GUI设计工具和工程设计的艰辛，也让我们体会到了团队合作的重要性和必要性，在彼此磨合中增加了各方面的能力——这种程序员素养的修炼，我认为同他的技术能力一样重要。  </p>
+<p>最后,在此感谢我们团队每一位认真刻苦的队员，同时也感谢在我们困惑之际给于我们帮助的两位助教和部分同学，项目的顺利完成离不开你们的帮助。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../Part2/Part2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第二阶段总结" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              第二阶段总结
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../Team2/task0/" class="md-footer__link md-footer__link--next" aria-label="下一页: 小组简介" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              小组简介
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
